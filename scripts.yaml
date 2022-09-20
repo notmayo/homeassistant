@@ -1,0 +1,36 @@
+clean_livingroom:
+  alias: clean_livingroom
+  sequence:
+  - service: vacuum.send_command
+    data:
+      command: spot_area
+      params:
+        rooms: 3,3
+        cleanings: 3
+    entity_id: vacuum.rosie
+  mode: single
+  max: 10
+'1613486659723':
+  alias: clean_kitchen
+  sequence:
+  - service: vacuum.send_command
+    data:
+      command: spot_area
+      params:
+        rooms: 0,0
+        cleanings: 1
+    entity_id: vacuum.rosie
+  mode: single
+  max: 10
+'1613486674410':
+  alias: clean_bedroom
+  sequence:
+  - service: vacuum.send_command
+    data:
+      command: spot_area
+      params:
+        rooms: 2,2
+        cleanings: 1
+    entity_id: vacuum.rosie
+  mode: single
+  max: 10

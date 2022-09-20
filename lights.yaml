@@ -1,0 +1,40 @@
+  - platform: group
+    name: Kitchen Lights
+    entities:
+      - switch.kitchen_ceiling_lights
+      - switch.kitchen_pendant_lights
+
+  - platform: group
+    name: Living Room Lights
+    entities:
+      - light.branch_lamp
+      - light.cage_lamp
+#      - switch.fireplace_stringlights
+      - light.foyer_lamp
+      - light.globe_lamp
+#      - switch.living_room_ceiling_lights
+
+#  - platform: group
+#    name: Downstairs Lights
+#    entities:
+#      - group.living_room_lights
+#      - group.kitchen_lights
+
+  - platform: group
+    name: Upstairs Lights
+    entities:
+      - light.desk_lamp
+      - light.floor_light
+      - light.upstairs_light
+
+  - platform: group
+    name: Office Lights
+    entities:
+      - light.office_light
+
+  - platform: group
+    name: Guest Bed Room Lights
+    entities:
+      - light.guest_bedroom_light
+#      - switch.guest_stringlights
+#      - switch.salt_lights

@@ -1,0 +1,661 @@
+- id: '1591730305657'
+  alias: House - home
+  description: ''
+  trigger:
+  - entity_id: person.scott
+    event: enter
+    platform: zone
+    zone: zone.home
+  condition: []
+  action:
+  - device_id: 4d3d3c22826f67fb49dd21f3727f9822
+    domain: lock
+    entity_id: lock.mudroom_door
+    type: unlock
+  - device_id: bdea957e42bd4dc0bf2ba7614953908f
+    domain: alarm_control_panel
+    entity_id: alarm_control_panel.ring_alarm
+    type: arm_away
+  - data: {}
+    entity_id: alarm_control_panel.ring_alarm
+    service: alarm_control_panel.alarm_arm_home
+  - data:
+      message: Unlocking the mudroom door & setting the alarm to Home.
+      title: Welcome home
+    service: notify.mobile_app_scotts_iphone
+  mode: single
+- id: '1592603774252'
+  alias: House - away
+  description: ''
+  trigger:
+  - entity_id: person.scott
+    event: leave
+    platform: zone
+    zone: zone.home
+  condition: []
+  action:
+  - device_id: 6be97d921f2b22ba772509ccad0ca0b0
+    domain: lock
+    entity_id: lock.back_door
+    type: lock
+  - device_id: 623c31f90348298dc5417d5d70f593e8
+    domain: lock
+    entity_id: lock.front_door
+    type: lock
+  - device_id: 4d3d3c22826f67fb49dd21f3727f9822
+    domain: lock
+    entity_id: lock.mudroom_door
+    type: lock
+  - device_id: bdea957e42bd4dc0bf2ba7614953908f
+    domain: alarm_control_panel
+    entity_id: alarm_control_panel.ring_alarm
+    type: arm_away
+  - data: {}
+    entity_id: alarm_control_panel.ring_alarm
+    service: alarm_control_panel.alarm_arm_away
+  - data:
+      message: Locking the doors & setting the alarm to Away.
+      title: See you soon!
+    service: notify.mobile_app_scotts_iphone
+  mode: single
+- id: '1594063476356'
+  alias: Front yard - lights off
+  description: ''
+  trigger:
+  - platform: time
+    at: 0:00
+  condition: []
+  action:
+  - type: turn_off
+    device_id: cd2722290eaf11eb8b2c71913333e3a5
+    entity_id: light.front_porch
+    domain: light
+  mode: parallel
+  max: 10
+- id: '1602805431523'
+  alias: Living room - lights on
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: -00:60:00
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 3e0e367205c8d1d915a4d1e2162c2e0e
+    entity_id: light.foyer_lamp
+    domain: light
+    brightness_pct: 100
+  - type: turn_on
+    device_id: 71b74002eb0a5f209e560b36536c5550
+    entity_id: switch.bannister_stringlights
+    domain: switch
+  - type: turn_on
+    device_id: 31793fd9e4d5975eb744037cee93c833
+    entity_id: switch.kitchen_ceiling_lights
+    domain: switch
+  - type: turn_on
+    device_id: c75e5ebf6339918dbbc74cdb72cf1a36
+    entity_id: switch.fireplace_stringlights
+    domain: switch
+  - type: turn_on
+    device_id: 99f005be65a4e845eaf7f7ee0f965abe
+    entity_id: light.globe_lamp
+    domain: light
+    brightness_pct: 100
+  - type: turn_on
+    device_id: 9c5284752aaee9f6fb4a74a4a6f9821a
+    entity_id: light.cage_lamp
+    domain: light
+    brightness_pct: 100
+  - type: turn_on
+    device_id: 2e7aaf09cc3b78e958226f811fde6459
+    entity_id: light.branch_lamp
+    domain: light
+  mode: single
+  max: 10
+- id: '1602875509667'
+  alias: Living room - lights off
+  description: ''
+  trigger:
+  - platform: time
+    at: 00:00:00
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 71b74002eb0a5f209e560b36536c5550
+    entity_id: switch.bannister_stringlights
+    domain: switch
+  - type: turn_off
+    device_id: c75e5ebf6339918dbbc74cdb72cf1a36
+    entity_id: switch.fireplace_stringlights
+    domain: switch
+  - type: turn_off
+    device_id: 3e0e367205c8d1d915a4d1e2162c2e0e
+    entity_id: light.foyer_lamp
+    domain: light
+  - type: turn_off
+    device_id: 9c5284752aaee9f6fb4a74a4a6f9821a
+    entity_id: light.cage_lamp
+    domain: light
+  - type: turn_off
+    device_id: 99f005be65a4e845eaf7f7ee0f965abe
+    entity_id: light.globe_lamp
+    domain: light
+  - type: turn_off
+    device_id: 2e7aaf09cc3b78e958226f811fde6459
+    entity_id: light.branch_lamp
+    domain: light
+  mode: single
+  max: 10
+- id: '1603253506785'
+  alias: Front yard - motion
+  description: ''
+  trigger:
+  - type: motion
+    platform: device
+    device_id: a2d4d345134011ebaf3bc5b0133bf088
+    entity_id: binary_sensor.front_door_motion_3
+    domain: binary_sensor
+  condition:
+  - condition: sun
+    after: sunset
+  action:
+  - type: turn_on
+    device_id: cd2722290eaf11eb8b2c71913333e3a5
+    entity_id: light.front_porch
+    domain: light
+    brightness_pct: 100
+  mode: parallel
+  max: 10
+- id: '1605716678701'
+  alias: Backyard - lights on
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: -00:30:00
+  condition: []
+  action:
+  - type: turn_on
+    device_id: acc20367f14e6a014750459cc2b87713
+    entity_id: switch.back_yard_stringlights
+    domain: switch
+  mode: single
+- id: '1605716767914'
+  alias: Backyard - lights off
+  description: ''
+  trigger:
+  - platform: time
+    at: 00:00:00
+  condition: []
+  action:
+  - type: turn_off
+    device_id: acc20367f14e6a014750459cc2b87713
+    entity_id: switch.back_yard_stringlights
+    domain: switch
+  - type: turn_off
+    device_id: ecb6de22e980c575efd9607701b7a64a
+    entity_id: light.back_yard_flood_lights
+    domain: light
+  mode: single
+- id: '1605808096582'
+  alias: Guest bedroom - lights on
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunset
+  condition: []
+  action:
+  - type: turn_on
+    device_id: af55a813cdcc7bcec8a59cf42875ead9
+    entity_id: switch.guest_stringlights
+    domain: switch
+  - type: turn_on
+    device_id: ad56775c2945b2ba1789fdb296411c13
+    entity_id: switch.salt_lights
+    domain: switch
+  mode: parallel
+  max: 10
+- id: '1605808152260'
+  alias: Guest bedroom - lights off
+  description: ''
+  trigger:
+  - platform: time
+    at: '23:00:00'
+  condition: []
+  action:
+  - type: turn_off
+    device_id: af55a813cdcc7bcec8a59cf42875ead9
+    entity_id: switch.guest_stringlights
+    domain: switch
+  - type: turn_off
+    device_id: ad56775c2945b2ba1789fdb296411c13
+    entity_id: switch.salt_lights
+    domain: switch
+  mode: parallel
+  max: 10
+- id: '1605808965734'
+  alias: Front yard - lights on
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunset
+  condition: []
+  action:
+  - type: turn_on
+    device_id: cd2722290eaf11eb8b2c71913333e3a5
+    entity_id: light.front_porch
+    domain: light
+    brightness_pct: 100
+  mode: single
+- id: '1605811873624'
+  alias: Upstairs - lights off
+  description: ''
+  trigger:
+  - platform: time
+    at: 03:00:00
+  condition: []
+  action:
+  - type: turn_off
+    device_id: d9d9cfc07adeea1a4d64e14c91936b21
+    entity_id: light.upstairs_floor_light
+    domain: light
+  - type: turn_off
+    device_id: 155c272e7726ffb7ad164825545f3e49
+    entity_id: light.upstairs_desk_lamp
+    domain: light
+  mode: parallel
+  max: 10
+- id: '1605811915085'
+  alias: Upstairs - lights on
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: -00:60:00
+  condition: []
+  action:
+  - type: turn_on
+    device_id: d9d9cfc07adeea1a4d64e14c91936b21
+    entity_id: light.upstairs_floor_light
+    domain: light
+  - type: turn_on
+    device_id: 155c272e7726ffb7ad164825545f3e49
+    entity_id: light.upstairs_desk_lamp
+    domain: light
+  mode: parallel
+  max: 10
+- id: '1615072867669'
+  alias: Master Bedroom - lights on
+  description: ''
+  trigger:
+  - platform: time
+    at: '19:30:00'
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 6714150ac67540fef4a2460e7c0412f6
+    entity_id: switch.master_bedroom_floor_light
+    domain: switch
+  mode: parallel
+  max: 10
+- id: '1615072934322'
+  alias: Master Bedroom - lights off
+  description: ''
+  trigger:
+  - platform: time
+    at: 00:00:00
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 6714150ac67540fef4a2460e7c0412f6
+    entity_id: switch.master_bedroom_floor_light
+    domain: switch
+  mode: parallel
+  max: 10
+- id: '1631145716202'
+  alias: Upstairs - Turn off Speakers
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.gaming_desktop
+    attribute: round_trip_time_avg
+    for:
+      hours: 0
+      minutes: 2
+      seconds: 0
+    from: '1000'
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 50222039f9a8c2260125b43d5c39c4ee
+    entity_id: switch.speakers
+    domain: switch
+  mode: queued
+  max: 10
+- id: '1631146279151'
+  alias: Upstairs - Turn on Speakers
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.gaming_desktop
+    to: '999'
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 15
+    from: '1'
+    attribute: round_trip_time_avg
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 50222039f9a8c2260125b43d5c39c4ee
+    entity_id: switch.speakers
+    domain: switch
+  mode: queued
+  max: 10
+- id: '1639280580671'
+  alias: Security - Ensure all doors are locked
+  description: ''
+  trigger:
+  - platform: time
+    at: 00:00:00
+  condition: []
+  action:
+  - device_id: ffcac73fb0fb82098da3fe22e7b179c0
+    domain: lock
+    entity_id: lock.fordpass_doorlock
+    type: lock
+  - service: lock.lock
+    data: {}
+    target:
+      entity_id: lock.door_locks
+  mode: parallel
+  max: 10
+- id: '1642180060330'
+  alias: Kitchen & Living room Blinds - closed
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: '0'
+    id: sun
+  condition: []
+  action:
+  - service: cover.set_cover_position
+    data:
+      position: 0
+    target:
+      entity_id: cover.living_room_kitchen_blinds
+  mode: single
+- id: '1642180106230'
+  alias: Kitchen & Living room Blinds - opened
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunrise
+    offset: +04:00:00
+  condition: []
+  action:
+  - service: cover.set_cover_position
+    data:
+      position: 25
+    target:
+      entity_id: cover.living_room_kitchen_blinds
+  mode: single
+- id: '1642998773108'
+  alias: Master Bedroom Blinds - closed
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: '0'
+  condition: []
+  action:
+  - service: cover.set_cover_position
+    data:
+      position: 0
+    target:
+      entity_id: cover.master_bedroom_blinds
+  mode: single
+- id: '1642998801766'
+  alias: Master Bedroom Blinds - opened
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunrise
+    offset: +04:00:00
+  condition: []
+  action:
+  - service: cover.set_cover_position
+    data:
+      position: 25
+    target:
+      entity_id: cover.master_bedroom_blinds
+  mode: single
+- id: '1643962731142'
+  alias: Upstairs - Doorbell Notifications
+  description: ''
+  trigger:
+  - type: motion
+    platform: device
+    device_id: 868fc7bf7e7844f78d5969cf5c65d585
+    entity_id: binary_sensor.front_doorbell_motion
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 0
+  condition: []
+  action:
+  - service: camera.snapshot
+    data:
+      filename: /config/www/doorbell.png
+    target:
+      entity_id: camera.front_doorbell
+  - service: notify.nvidiashield
+    data:
+      title: Front Door
+      data:
+        interrupt: 1
+        duration: 10
+        fontsize: max
+        position: center
+        color: black
+        image:
+          path: /config/www/doorbell.png
+      message: Motion detected
+  mode: single
+- id: '1643963410947'
+  alias: Upstairs - Garage Notifications
+  description: ''
+  trigger:
+  - type: motion
+    platform: device
+    device_id: 5a41ecba7953026b54a75f9ec7491f33
+    entity_id: binary_sensor.garage_camera_motion
+    domain: binary_sensor
+  condition: []
+  action:
+  - service: camera.snapshot
+    data:
+      filename: /config/www/garage.png
+    target:
+      entity_id: camera.garage_camera
+  - service: notify.nvidiashield
+    data:
+      title: Garage
+      data:
+        interrupt: 1
+        duration: 10
+        fontsize: max
+        position: center
+        color: black
+        image:
+          path: /config/www/garage.png
+      message: Motion detected
+  mode: single
+- id: '1646070004283'
+  alias: iOS - Upstairs Ceiling Fan
+  description: ''
+  trigger:
+  - platform: event
+    event_type: ios.action_fired
+    event_data:
+      actionName: Upstairs_Ceiling_fan
+  condition: []
+  action:
+  - service: fan.toggle
+    data: {}
+    target:
+      entity_id: fan.upstairs_ceiling_fan
+  mode: single
+- id: '1649988092051'
+  alias: Upstairs - Air Purifier Night
+  description: ''
+  trigger:
+  - platform: time
+    at: 03:00:00
+  condition: []
+  action:
+  - service: fan.set_percentage
+    data:
+      percentage: 100
+    target:
+      entity_id: fan.upstairs_air_purifier
+  mode: single
+- id: '1649988726596'
+  alias: Upstairs - Air Purifier Day
+  description: ''
+  trigger:
+  - platform: time
+    at: 06:00:00
+  condition: []
+  action:
+  - service: fan.set_preset_mode
+    data:
+      preset_mode: auto
+    target:
+      entity_id: fan.upstairs_air_purifier
+  mode: single
+- id: UpstairsHumidityFanOn
+  alias: Upstairs - Bathroom Humidity - Fan on
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.upstairs_bathroom_humidity_sensor_humidity
+    above: '60'
+  condition:
+  - condition: state
+    entity_id: input_boolean.upstairs_humidity
+    state: 'on'
+  action:
+  - service: switch.turn_on
+    entity_id: switch.upstairs_bathroom_humidity_fan
+  mode: single
+- id: UpstairsHumidityFanOff
+  alias: Upstairs - Bathroom Humidity - Fan off
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.upstairs_bathroom_humidity_sensor_humidity
+    below: '55'
+  condition:
+  - condition: state
+    entity_id: input_boolean.upstairs_humidity
+    state: 'on'
+  action:
+  - service: switch.turn_off
+    entity_id: switch.upstairs_bathroom_humidity_fan
+  mode: single
+- id: '1650744829971'
+  alias: Guest Bathroom - Bathroom Humidity - Fan off
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.guest_bathroom_humidity_sensor_humidity
+    below: '55'
+  condition:
+  - condition: state
+    entity_id: input_boolean.upstairs_humidity
+    state: 'on'
+  action:
+  - service: switch.turn_off
+    data: {}
+    target:
+      entity_id: switch.guest_bathroom_humidity_fan
+  mode: single
+- id: '1650744883929'
+  alias: Guest Bathroom - Bathroom Humidity - Fan on
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.guest_bathroom_humidity_sensor_humidity
+    above: '60'
+  condition:
+  - condition: state
+    entity_id: input_boolean.upstairs_humidity
+    state: 'on'
+  action:
+  - service: switch.turn_on
+    data: {}
+    target:
+      entity_id: switch.guest_bathroom_humidity_fan
+  mode: single
+- id: '1650744949375'
+  alias: Master Bathroom - Bathroom Humidity - Fan off
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.master_bathroom_humidity_sensor_humidity
+    below: '55'
+  condition:
+  - condition: state
+    entity_id: input_boolean.upstairs_humidity
+    state: 'on'
+  action:
+  - service: switch.turn_off
+    data: {}
+    target:
+      entity_id: switch.master_bathroom_humidity_fan
+  mode: single
+- id: '1650744985388'
+  alias: Master Bathroom - Bathroom Humidity - Fan on
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.master_bathroom_humidity_sensor_humidity
+    above: '60'
+  condition:
+  - condition: state
+    entity_id: input_boolean.upstairs_humidity
+    state: 'on'
+  action:
+  - service: switch.turn_on
+    data: {}
+    target:
+      entity_id: switch.master_bathroom_humidity_fan
+  mode: single
+- id: '1657137980161'
+  alias: Notification - Garage door TTS
+  description: ''
+  trigger: []
+  condition: []
+  action:
+  - service: notify.alexa_media_upstairs_thermostat
+    data:
+      message: Test
+      data:
+        type: announce
+        method: all
+  mode: single
+- id: '1663631898244'
+  alias: HASS - Backup Config
+  description: ''
+  trigger:
+  - platform: time
+    at: 00:00:00
+  condition: []
+  action:
+  - service: shell_command.ha_backup
+    data: {}
+  mode: single

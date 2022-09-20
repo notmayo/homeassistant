@@ -1,0 +1,40 @@
+- id: '1635439580912'
+  name: Living Room - Movie mode
+  entities:
+    light.branch_lamp:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      friendly_name: Branch lamp
+      icon: hass:lamp
+      supported_features: 63
+      state: 'off'
+    light.globe_lamp:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      friendly_name: Globe lamp
+      supported_features: 63
+      state: 'off'
+    light.cage_lamp:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      - random
+      supported_color_modes:
+      - color_temp
+      - hs
+      friendly_name: Cage Lamp
+      supported_features: 63
+      state: 'off'

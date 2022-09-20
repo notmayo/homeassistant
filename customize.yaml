@@ -1,0 +1,6 @@
+light.starprojector:
+  supported_color_modes:
+  - brightness
+  - color_temp
+  - hs
+switch.geoffrey_s_ecobee_smartthermostat_with_voice_control_do_not_disturb_switch: {}

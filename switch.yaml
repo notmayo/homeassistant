@@ -1,0 +1,31 @@
+  - platform: switch
+    name: Back yard Stringlights
+    entity_id: switch.back_yard_stringlights
+
+  - platform: switch
+    name: Back yard Stringlights
+    entity_id: switch.bannister_stringlights
+
+  - platform: switch
+    name: Fireplace Stringlights
+    entity_id: switch.fireplace_stringlights
+
+  - platform: switch
+    name: Guest stringlights
+    entity_id: switch.guest_stringlights
+
+  - platform: switch
+    name: Kitchen Ceiling Lights
+    entity_id: switch.kitchen_ceiling_lights
+
+  - platform: switch
+    name: Kitchen Pendant Lights
+    entity_id: switch.kitchen_pendant_lights
+
+  - platform: switch
+    name: Living room Ceiling Lights
+    entity_id: switch.living_room_ceiling_lights
+
+  - platform: switch
+    name: Salt lights
+    entity_id: switch.salt_lights

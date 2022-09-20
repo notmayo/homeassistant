@@ -1,0 +1,89 @@
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+  # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+  http:
+    use_x_forwarded_for: true
+    trusted_proxies: "http://192.168.1.110"
+
+# Text to speech
+tts:
+  - platform: google_translate
+    base_url: http://192.168.1.134:8123
+    cache: true
+    cache_dir: /tmp/tts
+    time_memory: 300
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+input_boolean: !include input_boolean.yaml
+binary_sensor: !include binary_sensor.yaml
+sensor: !include sensor.yaml
+
+homeassistant:
+  customize: !include customize.yaml
+
+frontend:
+  themes: !include_dir_merge_named themes
+
+alexa:
+  smart_home:
+    filter:
+      exclude_domains:
+        - automation
+        - group
+        - scene
+        - lock
+        - sensor
+
+spotcast:
+  sp_dc: !secret sp_dc
+  sp_key: !secret sp_key
+
+notify:
+  #Thermostats
+  - name: ecobee_downstairs
+    platform: ecobee
+  - name: ecobee_upstairs
+    platform: ecobee
+
+  #Upstairs TV
+  - platform: nfandroidtv
+    name: NvidiaShield
+    host: 192.168.1.105
+
+recorder:
+  purge_keep_days: 366
+  db_url: !secret db_url
+  auto_purge: true
+
+shell_command:
+  ha_backup: /bin/bash ha_gitpush.sh  
+
+camera:
+  - platform: local_file
+    file_path: /home/homeassistant/.homeassistant/images/mail_and_packages/mail_today.gif
+    name: mail_usps_gsm
+
+  - platform: local_file
+    file_path: /home/homeassistant/.homeassistant/images/mail_and_packages/mail_today2.gif
+    name: mail_usps_mtb
+
+  - platform: generic
+    name: Deebot_live_map
+    still_image_url: "http://192.168.1.134:8123/local/Rosie_liveMap.png" #Example configuration for livemappath: 'www/'
+    verify_ssl: false
+
+  - platform: generic
+    name: Truck
+    still_image_url: "http://192.168.1.134:8123/local/Truck.png" #Example configuration for livemappath: 'www/'
+    verify_ssl: false
+
+  - platform: ffmpeg
+    name: Garage Camera
+    input: !secret garage_camera
+
+  - platform: ffmpeg
+    name: Frontdoor Camera
+    input: !secret frontdoor_camera
