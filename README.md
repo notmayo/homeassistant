@@ -1,2 +1,2 @@
-# notmayo_hassio
+# notmayo's Home Assistant Configuration
 Readme TBA
