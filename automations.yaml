@@ -179,7 +179,7 @@
   action:
   - type: turn_on
     device_id: acc20367f14e6a014750459cc2b87713
-    entity_id: switch.back_yard_stringlights
+    entity_id: switch.back_yard_string_lights
     domain: switch
   mode: single
 - id: '1605716767914'
@@ -192,12 +192,12 @@
   action:
   - type: turn_off
     device_id: acc20367f14e6a014750459cc2b87713
-    entity_id: switch.back_yard_stringlights
+    entity_id: switch.back_yard_string_lights
     domain: switch
   - type: turn_off
     device_id: ecb6de22e980c575efd9607701b7a64a
-    entity_id: light.back_yard_flood_lights
-    domain: light
+    entity_id: switch.back_yard_flood_lights
+    domain: switch
   mode: single
 - id: '1605808096582'
   alias: Guest bedroom - lights on
@@ -296,7 +296,7 @@
   action:
   - type: turn_on
     device_id: 6714150ac67540fef4a2460e7c0412f6
-    entity_id: switch.master_bedroom_floor_light
+    entity_id: switch.main_bedroom_floor_light
     domain: switch
   mode: parallel
   max: 10
@@ -310,7 +310,7 @@
   action:
   - type: turn_off
     device_id: 6714150ac67540fef4a2460e7c0412f6
-    entity_id: switch.master_bedroom_floor_light
+    entity_id: switch.main_bedroom_floor_light
     domain: switch
   mode: parallel
   max: 10
@@ -405,7 +405,7 @@
       entity_id: cover.living_room_kitchen_blinds
   mode: single
 - id: '1642998773108'
-  alias: Master Bedroom Blinds - closed
+  alias: Main Bedroom Blinds - closed
   description: ''
   trigger:
   - platform: sun
@@ -417,10 +417,10 @@
     data:
       position: 0
     target:
-      entity_id: cover.master_bedroom_blinds
+      entity_id: cover.main_bedroom_blinds
   mode: single
 - id: '1642998801766'
-  alias: Master Bedroom Blinds - opened
+  alias: Main Bedroom Blinds - opened
   description: ''
   trigger:
   - platform: sun
@@ -432,7 +432,7 @@
     data:
       position: 25
     target:
-      entity_id: cover.master_bedroom_blinds
+      entity_id: cover.main_bedroom_blinds
   mode: single
 - id: '1643962731142'
   alias: Upstairs - Doorbell Notifications
@@ -606,7 +606,7 @@
   description: ''
   trigger:
   - platform: numeric_state
-    entity_id: sensor.master_bathroom_humidity_sensor_humidity
+    entity_id: sensor.main_bathroom_humidity
     below: '55'
   condition:
   - condition: state
@@ -616,14 +616,14 @@
   - service: switch.turn_off
     data: {}
     target:
-      entity_id: switch.master_bathroom_humidity_fan
+      entity_id: switch.main_bathroom_humidity_fan
   mode: single
 - id: '1650744985388'
-  alias: Master Bathroom - Bathroom Humidity - Fan on
+  alias: Main Bathroom - Bathroom Humidity - Fan on
   description: ''
   trigger:
   - platform: numeric_state
-    entity_id: sensor.master_bathroom_humidity_sensor_humidity
+    entity_id: sensor.main_bathroom_humidity
     above: '60'
   condition:
   - condition: state
@@ -633,7 +633,7 @@
   - service: switch.turn_on
     data: {}
     target:
-      entity_id: switch.master_bathroom_humidity_fan
+      entity_id: switch.main_bathroom_humidity_fan
   mode: single
 - id: '1657137980161'
   alias: Notification - Garage door TTS
