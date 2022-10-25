@@ -287,7 +287,7 @@
   mode: parallel
   max: 10
 - id: '1615072867669'
-  alias: Master Bedroom - lights on
+  alias: Main Bedroom - lights on
   description: ''
   trigger:
   - platform: time
@@ -301,7 +301,7 @@
   mode: parallel
   max: 10
 - id: '1615072934322'
-  alias: Master Bedroom - lights off
+  alias: Main Bedroom - lights off
   description: ''
   trigger:
   - platform: time
@@ -543,7 +543,7 @@
   alias: Upstairs - Bathroom Humidity - Fan on
   trigger:
   - platform: numeric_state
-    entity_id: sensor.upstairs_bathroom_humidity_sensor_humidity
+    entity_id: sensor.upstairs_bathroom_humidity
     above: '60'
   condition:
   - condition: state
@@ -557,7 +557,7 @@
   alias: Upstairs - Bathroom Humidity - Fan off
   trigger:
   - platform: numeric_state
-    entity_id: sensor.upstairs_bathroom_humidity_sensor_humidity
+    entity_id: sensor.upstairs_bathroom_humidity
     below: '55'
   condition:
   - condition: state
@@ -572,7 +572,7 @@
   description: ''
   trigger:
   - platform: numeric_state
-    entity_id: sensor.guest_bathroom_humidity_sensor_humidity
+    entity_id: sensor.guest_bathroom_humidity
     below: '55'
   condition:
   - condition: state
@@ -589,7 +589,7 @@
   description: ''
   trigger:
   - platform: numeric_state
-    entity_id: sensor.guest_bathroom_humidity_sensor_humidity
+    entity_id: sensor.guest_bathroom_humidity
     above: '60'
   condition:
   - condition: state
@@ -602,7 +602,7 @@
       entity_id: switch.guest_bathroom_humidity_fan
   mode: single
 - id: '1650744949375'
-  alias: Master Bathroom - Bathroom Humidity - Fan off
+  alias: Main Bathroom - Bathroom Humidity - Fan off
   description: ''
   trigger:
   - platform: numeric_state
