@@ -88,15 +88,16 @@
     brightness_pct: 100
   - type: turn_on
     device_id: 71b74002eb0a5f209e560b36536c5550
-    entity_id: switch.bannister_stringlights
-    domain: switch
+    entity_id: light.bannister_string_lights
+    domain: light
   - type: turn_on
-    device_id: 31793fd9e4d5975eb744037cee93c833
-    entity_id: switch.kitchen_ceiling_lights
-    domain: switch
+    device_id: 17543e4bfbda887b5ed2832d0872ed27
+    entity_id: light.kitchen_ceiling_lights
+    domain: light
+    brightness_pct: 100
   - type: turn_on
     device_id: c75e5ebf6339918dbbc74cdb72cf1a36
-    entity_id: switch.fireplace_stringlights
+    entity_id: switch.fireplace_string_lights
     domain: switch
   - type: turn_on
     device_id: 99f005be65a4e845eaf7f7ee0f965abe
@@ -124,12 +125,12 @@
   action:
   - type: turn_off
     device_id: 71b74002eb0a5f209e560b36536c5550
-    entity_id: switch.bannister_stringlights
-    domain: switch
+    entity_id: light.bannister_string_lights
+    domain: light
   - type: turn_off
     device_id: c75e5ebf6339918dbbc74cdb72cf1a36
-    entity_id: switch.fireplace_stringlights
-    domain: switch
+    entity_id: light.fireplace_string_lights
+    domain: light
   - type: turn_off
     device_id: 3e0e367205c8d1d915a4d1e2162c2e0e
     entity_id: light.foyer_lamp
