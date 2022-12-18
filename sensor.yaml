@@ -83,3 +83,16 @@
     #----- Input Date Times
       count_input_datetimes:
         value_template: "{{ states.input_datetime | list | length }}"
+
+  - platform: discord_game
+    token: !secret discord_game
+    image_format: png            # optional, available formats are: png, webp, jpeg, jpg
+    members:
+      - 379402551415668736
+
+  - platform: twitch
+    client_id: !secret twitch_clientid
+    client_secret: !secret twitch_secret
+    token: !secret twitch_oauth
+    channels:
+      - notmayo
