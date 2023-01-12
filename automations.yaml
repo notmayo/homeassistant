@@ -770,3 +770,53 @@
       - update.z_wave_js_to_mqtt_update
       - update.mudroom_light_firmware
       mobile_app_device: 42a4e3f74eb474f0e965b1a0bef316fd
+- id: '1673478964819'
+  alias: HVAC - Downstairs Heat on
+  description: ''
+  trigger:
+  - platform: device
+    device_id: 2dd9a05f5d7c9f5be70e62df411c1f37
+    domain: climate
+    entity_id: climate.downstairs
+    type: hvac_mode_changed
+    to: heat
+  condition:
+  - condition: device
+    device_id: e20e2a657cbfcce58be591e15cac715d
+    domain: climate
+    entity_id: climate.upstairs
+    type: is_hvac_mode
+    hvac_mode: cool
+  action:
+  - service: notify.mobile_app_scotts_iphone
+    data:
+      title: Thermostats are borked
+      message: Turning off the Upstairs Thermostat
+  - device_id: e20e2a657cbfcce58be591e15cac715d
+    domain: climate
+    entity_id: climate.upstairs
+    type: set_hvac_mode
+    hvac_mode: 'off'
+  mode: single
+- id: '1673480135395'
+  alias: "HVAC - Upstairs is HOT \U0001F975"
+  description: ''
+  trigger:
+  - type: temperature
+    platform: device
+    device_id: e20e2a657cbfcce58be591e15cac715d
+    entity_id: sensor.upstairs_temperature
+    domain: sensor
+    above: 77
+  condition: []
+  action:
+  - device_id: e20e2a657cbfcce58be591e15cac715d
+    domain: climate
+    entity_id: climate.upstairs
+    type: set_hvac_mode
+    hvac_mode: cool
+  - service: notify.mobile_app_scotts_iphone
+    data:
+      title: "Upstairs is HOT \U0001F975"
+      message: Changing the Upstairs Thermostat to Cool mode
+  mode: single
