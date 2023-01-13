@@ -820,3 +820,30 @@
       title: "Upstairs is HOT \U0001F975"
       message: Changing the Upstairs Thermostat to Cool mode
   mode: single
+- id: '1673586011784'
+  alias: Upstairs - Accent Lights Temp
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_number.upstairs_light_temp
+  condition: []
+  action:
+  - service: light.turn_on
+    data:
+      entity_id: light.upstairs_desk_lamp
+      color_temp_kelvin: '{{ states(''input_number.upstairs_light_temp'') }}'
+  mode: single
+- id: '1673587160226'
+  alias: Upstairs - Accent Lights Brightness
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_number.upstairs_lights_brightness
+  condition: []
+  action:
+  - service: light.turn_on
+    data:
+      entity_id: light.upstairs_desk_lamp
+      brightness_pct: '{{ states(''input_number.upstairs_lights_brightness'') }}'
+  mode: single
