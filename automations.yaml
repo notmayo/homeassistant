@@ -825,13 +825,14 @@
   description: ''
   trigger:
   - platform: state
-    entity_id: input_number.upstairs_light_temp
+    entity_id:
+    - input_number.upstairs_lights_temp
   condition: []
   action:
   - service: light.turn_on
     data:
-      entity_id: light.upstairs_desk_lamp
-      color_temp_kelvin: '{{ states(''input_number.upstairs_light_temp'') }}'
+      entity_id: light.upstairs_accent_lights
+      color_temp_kelvin: '{{ states(''input_number.upstairs_lights_temp'') }}'
   mode: single
 - id: '1673587160226'
   alias: Upstairs - Accent Lights Brightness
@@ -844,6 +845,6 @@
   action:
   - service: light.turn_on
     data:
-      entity_id: light.upstairs_desk_lamp
+      entity_id: light.upstairs_accent_lights
       brightness_pct: '{{ states(''input_number.upstairs_lights_brightness'') }}'
   mode: single
