@@ -848,3 +848,59 @@
       entity_id: light.upstairs_accent_lights
       brightness_pct: '{{ states(''input_number.upstairs_lights_brightness'') }}'
   mode: single
+- id: '1673970479920'
+  alias: Upstairs - Bathroom Humidity Fan Timer
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: switch.upstairs_bathroom_humidity_fan
+    from: 'off'
+    to: 'on'
+    for: 01:00:00
+  condition: []
+  action:
+  - service: switch.turn_off
+    entity_id: switch.upstairs_bathroom_humidity_fan
+  mode: single
+- id: '1673970780467'
+  alias: Guest Bathroom - Bathroom Humidity Fan Timer
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: switch.guest_bathroom_humidity_fan
+    from: 'off'
+    to: 'on'
+    for: 01:00:00
+  condition: []
+  action:
+  - service: switch.turn_off
+    entity_id: switch.guest_bathroom_humidity_fan
+  mode: single
+- id: '1673970863853'
+  alias: Main Bathroom - Bathroom Humidity Fan Timer
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: switch.main_bathroom_humidity_fan
+    from: 'off'
+    to: 'on'
+    for: 01:00:00
+  condition: []
+  action:
+  - service: switch.turn_off
+    entity_id: switch.main_bathroom_humidity_fan
+  mode: single
+- id: '1673971269127'
+  alias: Mudroom - Light Timer
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: light.mudroom_ceiling_light
+    from: 'off'
+    to: 'on'
+    for: 00:10:00
+  condition: []
+  action:
+  - service: light.turn_off
+    entity_id: light.mudroom_ceiling_light
+  mode: single
