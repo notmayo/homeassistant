@@ -904,3 +904,34 @@
   - service: light.turn_off
     entity_id: light.mudroom_ceiling_light
   mode: single
+- id: '1674374482470'
+  alias: Stairs - Light Timer
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - light.stairs_light
+    from: 'off'
+    to: 'on'
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
+  condition: []
+  action:
+  - service: switch.turn_off
+    data: {}
+    target:
+      entity_id: switch.stairs_light
+  mode: single
+- id: '1674435724674'
+  alias: A - Set Default Theme
+  description: ''
+  trigger:
+  - event: start
+    platform: homeassistant
+  condition: []
+  action:
+  - data:
+      name: kibibit
+    service: frontend.set_theme
