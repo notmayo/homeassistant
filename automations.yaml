@@ -401,7 +401,7 @@
   action:
   - service: cover.set_cover_position
     data:
-      position: 25
+      position: 75
     target:
       entity_id: cover.living_room_kitchen_blinds
   mode: single
@@ -431,7 +431,7 @@
   action:
   - service: cover.set_cover_position
     data:
-      position: 25
+      position: 75
     target:
       entity_id: cover.main_bedroom_blinds
   mode: single
