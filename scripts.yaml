@@ -34,3 +34,23 @@ clean_livingroom:
     entity_id: vacuum.rosie
   mode: single
   max: 10
+ceiling_fan_toggles:
+  alias: Ceiling Fan Toggles
+  sequence:
+  - if:
+    - condition: state
+      entity_id: fan.upstairs_ceiling_fan
+      attribute: percentage
+      state: '>=99'
+    then:
+    - service: fan.increase_speed
+      data:
+        percentage_step: 33
+      target:
+        entity_id: fan.upstairs_ceiling_fan
+    else:
+    - service: fan.turn_off
+      data: {}
+      target:
+        entity_id: fan.upstairs_ceiling_fan
+  mode: single
