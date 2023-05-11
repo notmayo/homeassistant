@@ -296,9 +296,9 @@
   condition: []
   action:
   - type: turn_on
-    device_id: 6714150ac67540fef4a2460e7c0412f6
-    entity_id: switch.main_bedroom_floor_light
-    domain: switch
+    device_id: e89982607d8c06e9b572c4eb1ff79ac9
+    entity_id: light.main_bedroom_floor_light
+    domain: light
   mode: parallel
   max: 10
 - id: '1615072934322'
@@ -310,9 +310,9 @@
   condition: []
   action:
   - type: turn_off
-    device_id: 6714150ac67540fef4a2460e7c0412f6
-    entity_id: switch.main_bedroom_floor_light
-    domain: switch
+    device_id: e89982607d8c06e9b572c4eb1ff79ac9
+    entity_id: light.main_bedroom_floor_light
+    domain: light
   mode: parallel
   max: 10
 - id: '1631145716202'
