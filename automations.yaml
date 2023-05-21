@@ -694,8 +694,6 @@
       - update.entities_button_group_update
       - update.fordpass_update
       - update.foyer_ceiling_lights_firmware
-      - update.garbage_collection_card_update
-      - update.garbage_collection_update
       - update.guest_bathroom_humidity_fan_firmware
       - update.guest_bathroom_firmware
       - update.guest_bedroom_fan_light_switch_firmware
@@ -734,7 +732,6 @@
       - update.office_ap
       - update.ont
       - update.phpmyadmin_update
-      - update.pi_hole_core_update_available
       - update.platinum_weather_card_update
       - update.purifier_card_update
       - update.resmed_myair_cpap_sensors_update
