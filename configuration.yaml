@@ -2,14 +2,6 @@
 default_config:
   # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
 
-# Text to speech
-tts:
-  - platform: google_translate
-    base_url: http://192.168.1.134:8123
-    cache: true
-    cache_dir: /tmp/tts
-    time_memory: 300
-
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
