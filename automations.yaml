@@ -932,3 +932,53 @@
   - data:
       name: kibibit
     service: frontend.set_theme
+- id: '1693408291107'
+  alias: Truck - Cool off truck before lunch
+  description: ''
+  trigger:
+  - platform: time
+    at: '10:45:00'
+  condition:
+  - condition: zone
+    entity_id: sensor.fordpass_gps
+    zone: zone.work
+  - condition: numeric_state
+    entity_id: sensor.weatherflow_feels_like_temperature
+    above: 75
+    attribute: attribution
+  action:
+  - type: turn_on
+    device_id: ffcac73fb0fb82098da3fe22e7b179c0
+    entity_id: 1596861b031ac82e98adb36fcf06a0ab
+    domain: switch
+  - device_id: 42a4e3f74eb474f0e965b1a0bef316fd
+    domain: mobile_app
+    type: notify
+    message: Truck has been started!
+    title: Lunch time!
+  mode: single
+- id: '1693417073995'
+  alias: Truck - Cool off truck before quitting time
+  description: ''
+  trigger:
+  - platform: time
+    at: '15:45:00'
+  condition:
+  - condition: zone
+    entity_id: sensor.fordpass_gps
+    zone: zone.work
+  - condition: numeric_state
+    entity_id: sensor.weatherflow_feels_like_temperature
+    above: 75
+    attribute: attribution
+  action:
+  - type: turn_on
+    device_id: ffcac73fb0fb82098da3fe22e7b179c0
+    entity_id: 1596861b031ac82e98adb36fcf06a0ab
+    domain: switch
+  - device_id: 42a4e3f74eb474f0e965b1a0bef316fd
+    domain: mobile_app
+    type: notify
+    message: Truck has been started!
+    title: Quittin' time!
+  mode: single
