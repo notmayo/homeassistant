@@ -939,13 +939,13 @@
   - platform: time
     at: '10:45:00'
   condition:
-  - condition: zone
-    entity_id: sensor.fordpass_gps
-    zone: zone.work
   - condition: numeric_state
     entity_id: sensor.weatherflow_feels_like_temperature
     above: 75
     attribute: attribution
+  - condition: zone
+    entity_id: person.scott
+    zone: zone.work
   action:
   - type: turn_on
     device_id: ffcac73fb0fb82098da3fe22e7b179c0
@@ -965,7 +965,7 @@
     at: '15:45:00'
   condition:
   - condition: zone
-    entity_id: sensor.fordpass_gps
+    entity_id: person.scott
     zone: zone.work
   - condition: numeric_state
     entity_id: sensor.weatherflow_feels_like_temperature
