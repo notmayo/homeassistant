@@ -939,13 +939,15 @@
   - platform: time
     at: '10:45:00'
   condition:
-  - condition: numeric_state
-    entity_id: sensor.weatherflow_feels_like_temperature
-    above: 75
-    attribute: attribution
-  - condition: zone
-    entity_id: person.scott
-    zone: zone.work
+  - condition: and
+    conditions:
+    - condition: zone
+      entity_id: person.scott
+      zone: zone.work
+    - condition: numeric_state
+      entity_id: weather.weatherflow_hourly_based_forecast
+      attribute: temperature
+      above: 80
   action:
   - type: turn_on
     device_id: ffcac73fb0fb82098da3fe22e7b179c0
@@ -964,13 +966,15 @@
   - platform: time
     at: '15:45:00'
   condition:
-  - condition: zone
-    entity_id: person.scott
-    zone: zone.work
-  - condition: numeric_state
-    entity_id: sensor.weatherflow_feels_like_temperature
-    above: 75
-    attribute: attribution
+  - condition: and
+    conditions:
+    - condition: zone
+      entity_id: person.scott
+      zone: zone.work
+    - condition: numeric_state
+      entity_id: weather.weatherflow_hourly_based_forecast
+      attribute: temperature
+      above: 80
   action:
   - type: turn_on
     device_id: ffcac73fb0fb82098da3fe22e7b179c0
