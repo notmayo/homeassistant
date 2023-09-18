@@ -34,23 +34,48 @@ clean_livingroom:
     entity_id: vacuum.rosie
   mode: single
   max: 10
-ceiling_fan_toggles:
-  alias: Ceiling Fan Toggles
+living_room_ceiling_fan_toggle:
+  alias: Living Room - Ceiling Fan Speed Toggle
   sequence:
-  - if:
-    - condition: state
+  - service: input_select.select_next
+    entity_id: input_select.living_room_ceiling_fan_speed
+  - service: fan.set_percentage
+    data_template:
+      entity_id: fan.living_room_ceiling_fan
+      percentage: "{% if is_state('input_select.living_room_ceiling_fan_speed', 'Low')
+        %}\n  33\n{% elif is_state('input_select.living_room_ceiling_fan_speed', 'Medium')
+        %}\n  66\n{% elif is_state('input_select.living_room_ceiling_fan_speed', 'High')
+        %}\n  100\n{% elif is_state('input_select.living_room_ceiling_fan_speed',
+        'Off') %}\n  0\n{% endif %}\n"
+  - delay: 00:00:05
+  mode: single
+'1695012412742':
+  alias: Main Bedroom - Ceiling Fan Speed Toggle
+  sequence:
+  - service: input_select.select_next
+    entity_id: input_select.main_bedroom_fan_speed
+  - service: fan.set_percentage
+    data_template:
+      entity_id: fan.main_bedroom_ceiling_fan
+      percentage: "{% if is_state('input_select.main_bedroom_fan_speed', 'Low') %}\n
+        \ 33\n{% elif is_state('input_select.main_bedroom_fan_speed', 'Medium') %}\n
+        \ 66\n{% elif is_state('input_select.main_bedroom_fan_speed', 'High') %}\n
+        \ 100\n{% elif is_state('input_select.main_bedroom_fan_speed', 'Off') %}\n
+        \ 0\n{% endif %}\n"
+  - delay: 00:00:05
+  mode: single
+'1695012644955':
+  alias: Upstairs - Ceiling Fan Speed Toggle
+  sequence:
+  - service: input_select.select_next
+    entity_id: input_select.upstairs_ceiling_fan_speed
+  - service: fan.set_percentage
+    data_template:
       entity_id: fan.upstairs_ceiling_fan
-      attribute: percentage
-      state: '>=99'
-    then:
-    - service: fan.increase_speed
-      data:
-        percentage_step: 33
-      target:
-        entity_id: fan.upstairs_ceiling_fan
-    else:
-    - service: fan.turn_off
-      data: {}
-      target:
-        entity_id: fan.upstairs_ceiling_fan
+      percentage: "{% if is_state('input_select.upstairs_ceiling_fan_speed', 'Low')
+        %}\n  33\n{% elif is_state('input_select.upstairs_ceiling_fan_speed', 'Medium')
+        %}\n  66\n{% elif is_state('input_select.upstairs_ceiling_fan_speed', 'High')
+        %}\n  100\n{% elif is_state('input_select.upstairs_ceiling_fan_speed', 'Off')
+        %}\n  0\n{% endif %}\n"
+  - delay: 00:00:05
   mode: single
