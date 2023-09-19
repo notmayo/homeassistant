@@ -10,7 +10,7 @@ clean_livingroom:
     entity_id: vacuum.rosie
   mode: single
   max: 10
-'1613486659723':
+'clean_kitchen':
   alias: clean_kitchen
   sequence:
   - service: vacuum.send_command
@@ -22,7 +22,7 @@ clean_livingroom:
     entity_id: vacuum.rosie
   mode: single
   max: 10
-'1613486674410':
+'clean_bedroom':
   alias: clean_bedroom
   sequence:
   - service: vacuum.send_command
@@ -35,7 +35,7 @@ clean_livingroom:
   mode: single
   max: 10
 living_room_ceiling_fan_toggle:
-  alias: Living Room - Ceiling Fan Speed Toggle
+  alias: Living Room - Ceiling Fan Toggle
   sequence:
   - service: input_select.select_next
     entity_id: input_select.living_room_ceiling_fan_speed
@@ -47,25 +47,35 @@ living_room_ceiling_fan_toggle:
         %}\n  66\n{% elif is_state('input_select.living_room_ceiling_fan_speed', 'High')
         %}\n  100\n{% elif is_state('input_select.living_room_ceiling_fan_speed',
         'Off') %}\n  0\n{% endif %}\n"
-  - delay: 00:00:05
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 0
+      milliseconds: 50
   mode: single
-'1695012412742':
-  alias: Main Bedroom - Ceiling Fan Speed Toggle
+  icon: mdi:ceiling-fan
+'main_bedroom_ceiling_fan_toggle':
+  alias: Main Bedroom - Ceiling Fan Toggle
   sequence:
   - service: input_select.select_next
-    entity_id: input_select.main_bedroom_fan_speed
+    entity_id: input_select.main_bedroom_ceiling_fan_speed
   - service: fan.set_percentage
     data_template:
       entity_id: fan.main_bedroom_ceiling_fan
-      percentage: "{% if is_state('input_select.main_bedroom_fan_speed', 'Low') %}\n
-        \ 33\n{% elif is_state('input_select.main_bedroom_fan_speed', 'Medium') %}\n
-        \ 66\n{% elif is_state('input_select.main_bedroom_fan_speed', 'High') %}\n
-        \ 100\n{% elif is_state('input_select.main_bedroom_fan_speed', 'Off') %}\n
-        \ 0\n{% endif %}\n"
-  - delay: 00:00:05
+      percentage: "{% if is_state('input_select.main_bedroom_ceiling_fan_speed', 'Low')
+        %}\n  33\n{% elif is_state('input_select.main_bedroom_ceiling_fan_speed',
+        'Medium') %}\n  66\n{% elif is_state('input_select.main_bedroom_ceiling_fan_speed',
+        'High') %}\n  100\n{% elif is_state('input_select.main_bedroom_ceiling_fan_speed',
+        'Off') %}\n  0\n{% endif %}\n"
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 0
+      milliseconds: 50
   mode: single
-'1695012644955':
-  alias: Upstairs - Ceiling Fan Speed Toggle
+  icon: mdi:ceiling-fan
+'upstairs_ceiling_fan_toggle':
+  alias: Upstairs - Ceiling Fan Toggle
   sequence:
   - service: input_select.select_next
     entity_id: input_select.upstairs_ceiling_fan_speed
@@ -77,5 +87,50 @@ living_room_ceiling_fan_toggle:
         %}\n  66\n{% elif is_state('input_select.upstairs_ceiling_fan_speed', 'High')
         %}\n  100\n{% elif is_state('input_select.upstairs_ceiling_fan_speed', 'Off')
         %}\n  0\n{% endif %}\n"
-  - delay: 00:00:05
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 0
+      milliseconds: 50
   mode: single
+  icon: mdi:ceiling-fan
+'baby_room_ceiling_fan_toggle':
+  alias: Baby Room - Ceiling Fan Speed Toggle
+  sequence:
+  - service: input_select.select_next
+    entity_id: input_select.baby_room_ceiling_fan_speed
+  - service: fan.set_percentage
+    data_template:
+      entity_id: fan.baby_room_ceiling_fan
+      percentage: "{% if is_state('input_select.baby_room_ceiling_fan_speed', 'Low')
+        %}\n  33\n{% elif is_state('input_select.baby_room_ceiling_fan_speed', 'Medium')
+        %}\n  66\n{% elif is_state('input_select.baby_room_ceiling_fan_speed', 'High')
+        %}\n  100\n{% elif is_state('input_select.baby_room_ceiling_fan_speed', 'Off')
+        %}\n  0\n{% endif %}\n"
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 0
+      milliseconds: 50
+  mode: single
+  icon: mdi:ceiling-fan
+'guest_bedroom_ceiling_fan_toggle':
+  alias: Guest Bedroom - Ceiling Fan Toggle
+  sequence:
+  - service: input_select.select_next
+    entity_id: input_select.guest_bedroom_ceiling_fan_speed
+  - service: fan.set_percentage
+    data_template:
+      entity_id: fan.guest_bedroom_ceiling_fan
+      percentage: "{% if is_state('input_select.guest_bedroom_ceiling_fan_speed',
+        'Low') %}\n  33\n{% elif is_state('input_select.guest_bedroom_ceiling_fan_speed',
+        'Medium') %}\n  66\n{% elif is_state('input_select.guest_bedroom_ceiling_fan_speed',
+        'High') %}\n  100\n{% elif is_state('input_select.guest_bedroom_ceiling_fan_speed',
+        'Off') %}\n  0\n{% endif %}\n"
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 0
+      milliseconds: 50
+  mode: single
+  icon: mdi:ceiling-fan
