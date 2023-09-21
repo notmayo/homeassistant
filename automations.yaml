@@ -947,7 +947,7 @@
     - condition: numeric_state
       entity_id: weather.weatherflow_hourly_based_forecast
       attribute: temperature
-      above: 80
+      above: 76
   action:
   - type: turn_on
     device_id: ffcac73fb0fb82098da3fe22e7b179c0
@@ -974,7 +974,7 @@
     - condition: numeric_state
       entity_id: weather.weatherflow_hourly_based_forecast
       attribute: temperature
-      above: 80
+      above: 76
   action:
   - type: turn_on
     device_id: ffcac73fb0fb82098da3fe22e7b179c0
