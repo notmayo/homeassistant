@@ -209,13 +209,13 @@
   condition: []
   action:
   - type: turn_on
-    device_id: af55a813cdcc7bcec8a59cf42875ead9
-    entity_id: switch.guest_stringlights
-    domain: switch
+    device_id: 5852871281b03eec7ab5a402a20e90f2
+    entity_id: d49500e4c5c445bde6f110e85586116b
+    domain: light
   - type: turn_on
-    device_id: ad56775c2945b2ba1789fdb296411c13
-    entity_id: switch.salt_lights
-    domain: switch
+    device_id: 738bcd19cdc71faf98bb08860810b256
+    entity_id: 37dac9aa6a2cb2964c2964664c1b10d4
+    domain: light
   mode: parallel
   max: 10
 - id: '1605808152260'
@@ -227,13 +227,13 @@
   condition: []
   action:
   - type: turn_off
-    device_id: af55a813cdcc7bcec8a59cf42875ead9
-    entity_id: switch.guest_stringlights
-    domain: switch
+    device_id: 5852871281b03eec7ab5a402a20e90f2
+    entity_id: d49500e4c5c445bde6f110e85586116b
+    domain: light
   - type: turn_off
-    device_id: ad56775c2945b2ba1789fdb296411c13
-    entity_id: switch.salt_lights
-    domain: switch
+    device_id: 738bcd19cdc71faf98bb08860810b256
+    entity_id: 37dac9aa6a2cb2964c2964664c1b10d4
+    domain: light
   mode: parallel
   max: 10
 - id: '1605808965734'
