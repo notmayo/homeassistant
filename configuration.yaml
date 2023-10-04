@@ -76,3 +76,17 @@ camera:
   - platform: ffmpeg
     name: Frontdoor Camera
     input: !secret frontdoor_camera
+
+mqtt:
+  cover:
+    - name: "Garage Door"
+    - availability_topic: "myq/GW2300197469/garagedoor"
+    - retain: false
+    - payload_open: "on"
+    - payload_close: "on"
+    - payload_stop: "on"
+    - position_open: 0
+    - position_closed: 1
+    - payload_available: "true"
+    - payload_not_available: "false"
+    - unique_id: "myQ-GW2300197469"
