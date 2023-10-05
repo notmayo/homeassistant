@@ -26,10 +26,6 @@ alexa:
         - lock
         - sensor
 
-spotcast:
-  sp_dc: !secret sp_dc
-  sp_key: !secret sp_key
-
 notify:
   #Thermostats
   - name: ecobee_downstairs
@@ -48,17 +44,9 @@ recorder:
   auto_purge: true
 
 shell_command:
-  ha_backup: /bin/bash ha_gitpush.sh  
+  ha_backup: /bin/bash ha_gitpush.sh
 
 camera:
-  - platform: local_file
-    file_path: /home/homeassistant/.homeassistant/images/mail_and_packages/mail_today.gif
-    name: mail_usps_gsm
-
-  - platform: local_file
-    file_path: /home/homeassistant/.homeassistant/images/mail_and_packages/mail_today2.gif
-    name: mail_usps_mtb
-
   - platform: generic
     name: Deebot_live_map
     still_image_url: "http://192.168.1.134:8123/local/Rosie_liveMap.png" #Example configuration for livemappath: 'www/'
@@ -79,14 +67,19 @@ camera:
 
 mqtt:
   cover:
-    - name: "Garage Door"
-    - availability_topic: "myq/GW2300197469/garagedoor"
-    - retain: false
-    - payload_open: "on"
-    - payload_close: "on"
-    - payload_stop: "on"
-    - position_open: 0
-    - position_closed: 1
-    - payload_available: "true"
-    - payload_not_available: "false"
-    - unique_id: "myQ-GW2300197469"
+    - unique_id: garage_door
+      name: "Garage Door"
+      command_topic: "myq/CG08461742F3/garagedoor/set"
+      state_topic: "myq/CG08461742F3/garagedoor/set"
+      qos: 0
+      retain: true
+      payload_open: "open"
+      payload_close: "close"
+      state_open: "open"
+      state_opening: "opening"
+      state_closed: "closed"
+      state_closing: "closing"
+      payload_available: "online"
+      payload_not_available: "offline"
+      optimistic: false
+      value_template: '{{ value.x }}'

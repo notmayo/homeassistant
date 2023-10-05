@@ -742,9 +742,7 @@
       - update.search_card_update
       - update.simple_thermostat_update
       - update.simple_vacuum_card_update
-      - update.spotcast_update
       - update.slider_entity_row_update
-      - update.spotify_lovelace_card_update
       - update.ssh_web_terminal_update
       - update.stairs_light_firmware
       - update.studio_code_server_update
@@ -767,6 +765,7 @@
       - update.z_wave_js_to_mqtt_update
       - update.mudroom_light_firmware
       mobile_app_device: 42a4e3f74eb474f0e965b1a0bef316fd
+      only_after: 07:00:00
 - id: '1673478964819'
   alias: HVAC - Downstairs Heat on
   description: ''
@@ -945,9 +944,8 @@
       entity_id: person.scott
       zone: zone.work
     - condition: numeric_state
-      entity_id: weather.weatherflow_hourly_based_forecast
-      attribute: temperature
-      above: 76
+      entity_id: sensor.weatherflow_air_temperature
+      above: 75
   action:
   - type: turn_on
     device_id: ffcac73fb0fb82098da3fe22e7b179c0
@@ -972,9 +970,8 @@
       entity_id: person.scott
       zone: zone.work
     - condition: numeric_state
-      entity_id: weather.weatherflow_hourly_based_forecast
-      attribute: temperature
-      above: 76
+      entity_id: sensor.weatherflow_air_temperature
+      above: 75
   action:
   - type: turn_on
     device_id: ffcac73fb0fb82098da3fe22e7b179c0
