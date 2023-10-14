@@ -697,7 +697,6 @@
       - update.guest_bathroom_humidity_fan_firmware
       - update.guest_bathroom_firmware
       - update.guest_bedroom_fan_light_switch_firmware
-      - update.ha_floorplan_update
       - update.hass_hue_icons_update
       - update.home_assistant_core_update
       - update.home_assistant_operating_system_update
@@ -720,7 +719,6 @@
       - update.main_bedroom_left_blinds_firmware
       - update.main_bedroom_right_blinds_firmware
       - update.mariadb_update
-      - update.metrology_metro_fluent_windows_themes_by_mmak_es_update
       - update.mini_media_player_update
       - update.mini_graph_card_update
       - update.modem
@@ -732,7 +730,6 @@
       - update.office_ap
       - update.ont
       - update.phpmyadmin_update
-      - update.platinum_weather_card_update
       - update.purifier_card_update
       - update.resmed_myair_cpap_sensors_update
       - update.ring_mqtt_with_video_streaming_update
