@@ -929,10 +929,10 @@
   - condition: and
     conditions:
     - condition: zone
-      entity_id: person.scott
+      entity_id: device_tracker.fordpass_tracker
       zone: zone.work
     - condition: numeric_state
-      entity_id: sensor.weatherflow_air_temperature
+      entity_id: sensor.fordpass_outsidetemp
       above: 75
   action:
   - type: turn_on
@@ -955,10 +955,10 @@
   - condition: and
     conditions:
     - condition: zone
-      entity_id: person.scott
+      entity_id: device_tracker.fordpass_tracker
       zone: zone.work
     - condition: numeric_state
-      entity_id: sensor.weatherflow_air_temperature
+      entity_id: sensor.fordpass_outsidetemp
       above: 75
   action:
   - type: turn_on
