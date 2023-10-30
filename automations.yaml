@@ -95,6 +95,7 @@
     entity_id: light.kitchen_ceiling_lights
     domain: light
     brightness_pct: 100
+    enabled: false
   - type: turn_on
     device_id: c75e5ebf6339918dbbc74cdb72cf1a36
     entity_id: switch.fireplace_string_lights
@@ -111,7 +112,7 @@
     brightness_pct: 100
   - type: turn_on
     device_id: 2e7aaf09cc3b78e958226f811fde6459
-    entity_id: light.branch_lamp
+    entity_id: be5c9e2084aaa83f0fc8ad99fe4b4c61
     domain: light
   mode: single
   max: 10
@@ -145,7 +146,7 @@
     domain: light
   - type: turn_off
     device_id: 2e7aaf09cc3b78e958226f811fde6459
-    entity_id: light.branch_lamp
+    entity_id: be5c9e2084aaa83f0fc8ad99fe4b4c61
     domain: light
   mode: single
   max: 10
@@ -248,7 +249,6 @@
     device_id: cd2722290eaf11eb8b2c71913333e3a5
     entity_id: light.front_porch
     domain: light
-    brightness_pct: 100
   mode: single
 - id: '1605811873624'
   alias: Upstairs - lights off
