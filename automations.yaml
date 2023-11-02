@@ -920,7 +920,7 @@
       name: kibibit
     service: frontend.set_theme
 - id: '1693408291107'
-  alias: Truck - Cool off truck before lunch
+  alias: Truck - Start truck for lunch
   description: ''
   trigger:
   - platform: time
@@ -931,9 +931,20 @@
     - condition: zone
       entity_id: device_tracker.fordpass_tracker
       zone: zone.work
-    - condition: numeric_state
-      entity_id: sensor.fordpass_outsidetemp
-      above: 75
+    - condition: or
+      conditions:
+      - type: is_temperature
+        condition: device
+        device_id: ffcac73fb0fb82098da3fe22e7b179c0
+        entity_id: c9c473c3420f9a59b5beb91b22ab962e
+        domain: sensor
+        above: 72
+      - type: is_temperature
+        condition: device
+        device_id: ffcac73fb0fb82098da3fe22e7b179c0
+        entity_id: c9c473c3420f9a59b5beb91b22ab962e
+        domain: sensor
+        below: 60
   action:
   - type: turn_on
     device_id: ffcac73fb0fb82098da3fe22e7b179c0
@@ -946,7 +957,7 @@
     title: Lunch time!
   mode: single
 - id: '1693417073995'
-  alias: Truck - Cool off truck before quitting time
+  alias: Truck - Start truck before quitting time
   description: ''
   trigger:
   - platform: time
@@ -957,9 +968,20 @@
     - condition: zone
       entity_id: device_tracker.fordpass_tracker
       zone: zone.work
-    - condition: numeric_state
-      entity_id: sensor.fordpass_outsidetemp
-      above: 75
+    - condition: or
+      conditions:
+      - type: is_temperature
+        condition: device
+        device_id: ffcac73fb0fb82098da3fe22e7b179c0
+        entity_id: c9c473c3420f9a59b5beb91b22ab962e
+        domain: sensor
+        above: 72
+      - type: is_temperature
+        condition: device
+        device_id: ffcac73fb0fb82098da3fe22e7b179c0
+        entity_id: c9c473c3420f9a59b5beb91b22ab962e
+        domain: sensor
+        below: 65
   action:
   - type: turn_on
     device_id: ffcac73fb0fb82098da3fe22e7b179c0
