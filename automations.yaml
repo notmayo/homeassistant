@@ -1053,4 +1053,5 @@
       - update.plex_media_server_complex_2_0
       - update.ps5_mqtt_update
       - update.silicon_labs_multiprotocol_update
-      mobile_app_device_2: a41f1f2b144ad2e903335ea7ce41cd4d
+      mobile_app_device_2: 42a4e3f74eb474f0e965b1a0bef316fd
+      send_to_ha: true
