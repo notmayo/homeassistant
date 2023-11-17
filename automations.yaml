@@ -951,7 +951,7 @@
   use_blueprint:
     path: mdegat01/update_notifications.yaml
     input:
-      mobile_app_device: a41f1f2b144ad2e903335ea7ce41cd4d
+      mobile_app_device: 42a4e3f74eb474f0e965b1a0bef316fd
       only_after: 07:00:00
       update_entities:
       - update.ssh_web_terminal_update
@@ -1055,3 +1055,23 @@
       - update.silicon_labs_multiprotocol_update
       mobile_app_device_2: 42a4e3f74eb474f0e965b1a0bef316fd
       send_to_ha: true
+- id: '1700181813620'
+  alias: Speedtest broken
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - sensor.speedtest_download
+    attribute: attribution
+    to: unavailable
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
+  condition: []
+  action:
+  - service: homeassistant.reload_config_entry
+    data: {}
+    target:
+      device_id: 5f2e8a949b4f392775d1de9d5243868b
+  mode: single
