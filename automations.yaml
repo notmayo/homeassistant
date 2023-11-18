@@ -1075,3 +1075,92 @@
     target:
       device_id: 5f2e8a949b4f392775d1de9d5243868b
   mode: single
+- id: '1700214069951'
+  alias: Upstairs - Light Switch Scenes
+  description: ''
+  use_blueprint:
+    path: cree8/zwave-js-inovelli-lzw36-fan-switch-dimmer.yaml
+    input:
+      inovelli_fan_switch: 661d2e336e5e19fc944951e19c02b74a
+      button_a2:
+      - service: light.toggle
+        data: {}
+        target:
+          entity_id: light.upstairs_accent_lights
+      button_a3:
+      - service: light.toggle
+        data: {}
+        target:
+          entity_id:
+          - light.elgato_key_light_left
+          - light.elgato_key_light_right
+- id: '1700214154405'
+  alias: Baby's Room - Light Switch Scenes
+  description: ''
+  use_blueprint:
+    path: cree8/zwave-js-inovelli-lzw36-fan-switch-dimmer.yaml
+    input:
+      inovelli_fan_switch: 62503864c80b640f142fe8c6b44d20cd
+      button_a2:
+      - service: light.toggle
+        data: {}
+        target:
+          entity_id: light.branch_lamp
+- id: '1700214319363'
+  alias: Guest Bedroom - Light Switch Scenes
+  description: ''
+  use_blueprint:
+    path: cree8/zwave-js-inovelli-lzw36-fan-switch-dimmer.yaml
+    input:
+      inovelli_fan_switch: 5aff93290a129b01318442838cd1b85d
+      button_a2:
+      - service: light.toggle
+        data: {}
+        target:
+          entity_id: light.guest_bedroom_accent_lights
+- id: '1700215155087'
+  alias: Living Room - Ceiling Lights Scenes
+  description: ''
+  use_blueprint:
+    path: freethewhat/enbrighten-tap-events.yaml
+    input:
+      device: fc8fa963b5e8fbeb99efbd87a5617107
+      double_tap_on:
+      - service: light.toggle
+        data: {}
+        target:
+          entity_id: light.living_room_accent_lights
+      double_tap_off:
+      - service: light.toggle
+        data: {}
+        target:
+          entity_id: light.living_room_accent_lights
+- id: '1700215248949'
+  alias: Main Bedroom - Ceiling Fan Lights Scenes
+  description: ''
+  use_blueprint:
+    path: freethewhat/enbrighten-tap-events.yaml
+    input:
+      device: 1275b1cbd26f3a82a2ea3e5018e2d4c1
+      double_tap_on:
+      - service: light.toggle
+        data: {}
+        target:
+          entity_id: light.main_bedroom_accent_lights
+- id: '1700265766685'
+  alias: Back Yard - Switch Scenes
+  description: ''
+  use_blueprint:
+    path: freethewhat/enbrighten-tap-events.yaml
+    input:
+      device: ecb6de22e980c575efd9607701b7a64a
+      double_tap_on:
+      - service: light.toggle
+        data: {}
+        target:
+          entity_id: light.back_yard_string_lights
+      double_tap_off:
+      - service: light.toggle
+        data: {}
+        target:
+          entity_id: light.back_yard_string_lights
