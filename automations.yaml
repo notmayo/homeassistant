@@ -1119,7 +1119,7 @@
         target:
           entity_id: light.guest_bedroom_accent_lights
 - id: '1700215155087'
-  alias: Living Room - Ceiling Lights Scenes
+  alias: Living Room - Light Switch Scenes
   description: ''
   use_blueprint:
     path: freethewhat/enbrighten-tap-events.yaml
@@ -1136,7 +1136,7 @@
         target:
           entity_id: light.living_room_accent_lights
 - id: '1700215248949'
-  alias: Main Bedroom - Ceiling Fan Lights Scenes
+  alias: Main Bedroom - Ceiling Fan Light Switch Scenes
   description: ''
   use_blueprint:
     path: freethewhat/enbrighten-tap-events.yaml
@@ -1148,7 +1148,7 @@
         target:
           entity_id: light.main_bedroom_accent_lights
 - id: '1700265766685'
-  alias: Back Yard - Switch Scenes
+  alias: Back Yard - Light Switch Scenes
   description: ''
   use_blueprint:
     path: freethewhat/enbrighten-tap-events.yaml
