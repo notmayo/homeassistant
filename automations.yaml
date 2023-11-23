@@ -1164,3 +1164,21 @@
         data: {}
         target:
           entity_id: light.back_yard_string_lights
+- id: '1700714009883'
+  alias: Notification - Dryer
+  description: ''
+  use_blueprint:
+    path: sbyx/notify-or-do-something-when-an-appliance-like-a-dishwasher-or-washing-machine-finishes.yaml
+    input:
+      power_sensor: sensor.dryer_usage
+      starting_threshold: 100
+      actions:
+      - service: notify.mobile_app_scotts_iphone
+        data:
+          message: The dryer has finished!
+          title: Dryer
+      pre_actions:
+      - service: notify.mobile_app_scotts_iphone
+        data:
+          message: The dryer has started!
+          title: Dryer
