@@ -1182,3 +1182,45 @@
         data:
           message: The dryer has started!
           title: Dryer
+- id: '1701584427519'
+  alias: Living Room - Surround Sound - Enable Night Mode
+  description: ''
+  trigger:
+  - platform: time
+    at: '21:00:00'
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 52e32519bf2635a8e95a89fd32259f1e
+    entity_id: 7069e2cf22b55a218a092c71b3e015e8
+    domain: switch
+  - type: turn_on
+    device_id: 52e32519bf2635a8e95a89fd32259f1e
+    entity_id: 03410e8853fa6c32033c7387dde3a717
+    domain: switch
+  - type: turn_off
+    device_id: 52e32519bf2635a8e95a89fd32259f1e
+    entity_id: f7a790b694c006771be554e8329bd7e4
+    domain: switch
+  mode: single
+- id: '1701584497789'
+  alias: Living Room - Surround Sound - Disable Night Mode
+  description: ''
+  trigger:
+  - platform: time
+    at: '10:00:00'
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 52e32519bf2635a8e95a89fd32259f1e
+    entity_id: 7069e2cf22b55a218a092c71b3e015e8
+    domain: switch
+  - type: turn_off
+    device_id: 52e32519bf2635a8e95a89fd32259f1e
+    entity_id: 03410e8853fa6c32033c7387dde3a717
+    domain: switch
+  - type: turn_on
+    device_id: 52e32519bf2635a8e95a89fd32259f1e
+    entity_id: f7a790b694c006771be554e8329bd7e4
+    domain: switch
+  mode: single
