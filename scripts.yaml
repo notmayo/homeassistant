@@ -10,7 +10,7 @@ clean_livingroom:
     entity_id: vacuum.rosie
   mode: single
   max: 10
-'clean_kitchen':
+clean_kitchen:
   alias: clean_kitchen
   sequence:
   - service: vacuum.send_command
@@ -22,7 +22,7 @@ clean_livingroom:
     entity_id: vacuum.rosie
   mode: single
   max: 10
-'clean_bedroom':
+clean_bedroom:
   alias: clean_bedroom
   sequence:
   - service: vacuum.send_command
@@ -54,7 +54,7 @@ living_room_ceiling_fan_toggle:
       milliseconds: 50
   mode: single
   icon: mdi:ceiling-fan
-'main_bedroom_ceiling_fan_toggle':
+main_bedroom_ceiling_fan_toggle:
   alias: Main Bedroom - Ceiling Fan Toggle
   sequence:
   - service: input_select.select_next
@@ -74,7 +74,7 @@ living_room_ceiling_fan_toggle:
       milliseconds: 50
   mode: single
   icon: mdi:ceiling-fan
-'upstairs_ceiling_fan_toggle':
+upstairs_ceiling_fan_toggle:
   alias: Upstairs - Ceiling Fan Toggle
   sequence:
   - service: input_select.select_next
@@ -94,7 +94,7 @@ living_room_ceiling_fan_toggle:
       milliseconds: 50
   mode: single
   icon: mdi:ceiling-fan
-'baby_room_ceiling_fan_toggle':
+baby_room_ceiling_fan_toggle:
   alias: Baby Room - Ceiling Fan Speed Toggle
   sequence:
   - service: input_select.select_next
@@ -114,7 +114,7 @@ living_room_ceiling_fan_toggle:
       milliseconds: 50
   mode: single
   icon: mdi:ceiling-fan
-'guest_bedroom_ceiling_fan_toggle':
+guest_bedroom_ceiling_fan_toggle:
   alias: Guest Bedroom - Ceiling Fan Toggle
   sequence:
   - service: input_select.select_next
@@ -134,3 +134,434 @@ living_room_ceiling_fan_toggle:
       milliseconds: 50
   mode: single
   icon: mdi:ceiling-fan
+panasonic_triple_play_crt_power:
+  alias: Panasonic Triple Play CRT - Power
+  sequence:
+  - service: remote.send_command
+    data:
+      device: Panasonic Triple Play CRT
+      command: Power
+    target:
+      device_id: afacd8d0620a152fe420f4799e8ecafa
+  mode: single
+  icon: hass:television-classic
+panasonic_triple_play_crt_volume_up:
+  alias: Panasonic Triple Play CRT - Volume Up
+  sequence:
+  - service: remote.send_command
+    data:
+      device: Panasonic Triple Play CRT
+      command: Volume Up
+    target:
+      device_id: afacd8d0620a152fe420f4799e8ecafa
+  mode: single
+  icon: hass:television-classic
+panasonic_triple_play_crt_volume_down:
+  alias: Panasonic Triple Play CRT - Volume Down
+  sequence:
+  - service: remote.send_command
+    data:
+      device: Panasonic Triple Play CRT
+      command: Volume Down
+    target:
+      device_id: afacd8d0620a152fe420f4799e8ecafa
+  mode: single
+  icon: hass:television-classic
+panasonic_triple_play_crt_eject:
+  alias: Panasonic Triple Play CRT - Eject
+  sequence:
+  - service: remote.send_command
+    data:
+      device: Panasonic Triple Play CRT
+      command: Eject
+    target:
+      device_id: afacd8d0620a152fe420f4799e8ecafa
+  mode: single
+  icon: hass:television-classic
+panasonic_triple_play_crt_tv_vcr:
+  alias: Panasonic Triple Play CRT - TV/VCR
+  sequence:
+  - service: remote.send_command
+    data:
+      device: Panasonic Triple Play CRT
+      command: TV/VCR
+    target:
+      device_id: afacd8d0620a152fe420f4799e8ecafa
+  mode: single
+  icon: hass:television-classic
+panasonic_triple_play_crt_dvd:
+  alias: Panasonic Triple Play CRT - DVD
+  sequence:
+  - service: remote.send_command
+    data:
+      device: Panasonic Triple Play CRT
+      command: DVD
+    target:
+      device_id: afacd8d0620a152fe420f4799e8ecafa
+  mode: single
+  icon: hass:television-classic
+panasonic_triple_play_crt_down:
+  alias: Panasonic Triple Play CRT - Down
+  sequence:
+  - service: remote.send_command
+    data:
+      device: Panasonic Triple Play CRT
+      command: Down
+    target:
+      device_id: afacd8d0620a152fe420f4799e8ecafa
+  mode: single
+  icon: hass:television-classic
+panasonic_triple_play_crt_left:
+  alias: Panasonic Triple Play CRT - Left
+  sequence:
+  - service: remote.send_command
+    data:
+      device: Panasonic Triple Play CRT
+      command: Left
+    target:
+      device_id: afacd8d0620a152fe420f4799e8ecafa
+  mode: single
+  icon: hass:television-classic
+panasonic_triple_play_crt_right:
+  alias: Panasonic Triple Play CRT - Right
+  sequence:
+  - service: remote.send_command
+    data:
+      device: Panasonic Triple Play CRT
+      command: Right
+    target:
+      device_id: afacd8d0620a152fe420f4799e8ecafa
+  mode: single
+  icon: hass:television-classic
+panasonic_triple_play_crt_up:
+  alias: Panasonic Triple Play CRT - Up
+  sequence:
+  - service: remote.send_command
+    data:
+      command: Up
+      device: Panasonic Triple Play CRT
+    target:
+      device_id: afacd8d0620a152fe420f4799e8ecafa
+  mode: single
+  icon: mdi:television-classic
+panasonic_triple_play_crt_channel_up:
+  alias: Panasonic Triple Play CRT - Channel Up
+  sequence:
+  - service: remote.send_command
+    data:
+      device: Panasonic Triple Play CRT
+      command: Channel Up
+    target:
+      device_id: afacd8d0620a152fe420f4799e8ecafa
+  mode: single
+  icon: hass:television-classic
+panasonic_triple_play_crt_channel_down:
+  alias: Panasonic Triple Play CRT - Channel Down
+  sequence:
+  - service: remote.send_command
+    data:
+      device: Panasonic Triple Play CRT
+      command: Channel Down
+    target:
+      device_id: afacd8d0620a152fe420f4799e8ecafa
+  mode: single
+  icon: hass:television-classic
+panasonic_triple_play_crt_display:
+  alias: Panasonic Triple Play CRT - Display
+  sequence:
+  - service: remote.send_command
+    data:
+      command: Display
+      device: Panasonic Triple Play CRT
+    target:
+      device_id: afacd8d0620a152fe420f4799e8ecafa
+  mode: single
+  icon: mdi:television-classic
+panasonic_triple_play_crt_action:
+  alias: Panasonic Triple Play CRT - Action
+  sequence:
+  - service: remote.send_command
+    data:
+      command: Action
+      device: Panasonic Triple Play CRT
+    target:
+      device_id: afacd8d0620a152fe420f4799e8ecafa
+  mode: single
+  icon: mdi:television-classic
+panasonic_triple_play_crt_menu:
+  alias: Panasonic Triple Play CRT - Menu
+  sequence:
+  - service: remote.send_command
+    data:
+      command: Menu
+      device: Panasonic Triple Play CRT
+    target:
+      device_id: afacd8d0620a152fe420f4799e8ecafa
+  mode: single
+  icon: mdi:television-classic
+panasonic_triple_play_crt_set:
+  alias: Panasonic Triple Play CRT - Set
+  sequence:
+  - service: remote.send_command
+    data:
+      command: Set
+      device: Panasonic Triple Play CRT
+    target:
+      device_id: afacd8d0620a152fe420f4799e8ecafa
+  mode: single
+  icon: mdi:television-classic
+panasonic_triple_play_crt_rtune:
+  alias: Panasonic Triple Play CRT - RTUNE
+  sequence:
+  - service: remote.send_command
+    data:
+      command: RTUNE
+      device: Panasonic Triple Play CRT
+    target:
+      device_id: afacd8d0620a152fe420f4799e8ecafa
+  mode: single
+  icon: mdi:television-classic
+panasonic_triple_play_crt_mute:
+  alias: Panasonic Triple Play CRT - Mute
+  sequence:
+  - service: remote.send_command
+    data:
+      command: Mute
+      device: Panasonic Triple Play CRT
+    target:
+      device_id: afacd8d0620a152fe420f4799e8ecafa
+  mode: single
+  icon: mdi:television-classic
+panasonic_triple_play_crt_audio:
+  alias: Panasonic Triple Play CRT - Audio
+  sequence:
+  - service: remote.send_command
+    data:
+      command: Audio
+      device: Panasonic Triple Play CRT
+    target:
+      device_id: afacd8d0620a152fe420f4799e8ecafa
+  mode: single
+  icon: mdi:television-classic
+panasonic_triple_play_crt_input:
+  alias: Panasonic Triple Play CRT - Input
+  sequence:
+  - service: remote.send_command
+    data:
+      command: Input
+      device: Panasonic Triple Play CRT
+    target:
+      device_id: afacd8d0620a152fe420f4799e8ecafa
+  mode: single
+  icon: mdi:television-classic
+tesmart_hdmi_switch_0:
+  alias: TESmart HDMI Switch - 0
+  sequence:
+  - service: remote.send_command
+    data:
+      device: TESmart HDMI Switch
+      command:
+      - 0
+    target:
+      device_id: afacd8d0620a152fe420f4799e8ecafa
+  mode: single
+tesmart_hdmi_switch_1:
+  alias: TESmart HDMI Switch - 1
+  sequence:
+  - service: remote.send_command
+    data:
+      device: TESmart HDMI Switch
+      command: 1
+    target:
+      device_id: afacd8d0620a152fe420f4799e8ecafa
+  mode: single
+tesmart_hdmi_switch_2:
+  alias: TESmart HDMI Switch - 2
+  sequence:
+  - service: remote.send_command
+    data:
+      device: TESmart HDMI Switch
+      command: 2
+    target:
+      device_id: afacd8d0620a152fe420f4799e8ecafa
+  mode: single
+tesmart_hdmi_switch_3:
+  alias: TESmart HDMI Switch - 3
+  sequence:
+  - service: remote.send_command
+    data:
+      device: TESmart HDMI Switch
+      command: 3
+    target:
+      device_id: afacd8d0620a152fe420f4799e8ecafa
+  mode: single
+tesmart_hdmi_switch_4:
+  alias: TESmart HDMI Switch - 4
+  sequence:
+  - service: remote.send_command
+    data:
+      device: TESmart HDMI Switch
+      command: 4
+    target:
+      device_id: afacd8d0620a152fe420f4799e8ecafa
+  mode: single
+tesmart_hdmi_switch_5:
+  alias: TESmart HDMI Switch - 5
+  sequence:
+  - service: remote.send_command
+    data:
+      device: TESmart HDMI Switch
+      command: 5
+    target:
+      device_id: afacd8d0620a152fe420f4799e8ecafa
+  mode: single
+tesmart_hdmi_switch_6:
+  alias: TESmart HDMI Switch - 6
+  sequence:
+  - service: remote.send_command
+    data:
+      device: TESmart HDMI Switch
+      command: 6
+    target:
+      device_id: afacd8d0620a152fe420f4799e8ecafa
+  mode: single
+tesmart_hdmi_switch_7:
+  alias: TESmart HDMI Switch - 7
+  sequence:
+  - service: remote.send_command
+    data:
+      device: TESmart HDMI Switch
+      command: 7
+    target:
+      device_id: afacd8d0620a152fe420f4799e8ecafa
+  mode: single
+tesmart_hdmi_switch_8:
+  alias: TESmart HDMI Switch - 8
+  sequence:
+  - service: remote.send_command
+    data:
+      device: TESmart HDMI Switch
+      command: 8
+    target:
+      device_id: afacd8d0620a152fe420f4799e8ecafa
+  mode: single
+tesmart_hdmi_switch_9:
+  alias: TESmart HDMI Switch - 9
+  sequence:
+  - service: remote.send_command
+    data:
+      device: TESmart HDMI Switch
+      command: 9
+    target:
+      device_id: afacd8d0620a152fe420f4799e8ecafa
+  mode: single
+tesmart_hdmi_switch_11:
+  alias: TESmart HDMI Switch - 11
+  sequence:
+  - service: remote.send_command
+    data:
+      device: TESmart HDMI Switch
+      command: 11
+    target:
+      device_id: afacd8d0620a152fe420f4799e8ecafa
+  mode: single
+tesmart_hdmi_switch_12:
+  alias: TESmart HDMI Switch - 12
+  sequence:
+  - service: remote.send_command
+    data:
+      device: TESmart HDMI Switch
+      command: 12
+    target:
+      device_id: afacd8d0620a152fe420f4799e8ecafa
+  mode: single
+tesmart_hdmi_switch_13:
+  alias: TESmart HDMI Switch - 13
+  sequence:
+  - service: remote.send_command
+    data:
+      device: TESmart HDMI Switch
+      command: 13
+    target:
+      device_id: afacd8d0620a152fe420f4799e8ecafa
+  mode: single
+tesmart_hdmi_switch_15:
+  alias: TESmart HDMI Switch - 15
+  sequence:
+  - service: remote.send_command
+    data:
+      device: TESmart HDMI Switch
+      command: 15
+    target:
+      device_id: afacd8d0620a152fe420f4799e8ecafa
+  mode: single
+tesmart_hdmi_switch_16:
+  alias: TESmart HDMI Switch - 16
+  sequence:
+  - service: remote.send_command
+    data:
+      device: TESmart HDMI Switch
+      command: 16
+    target:
+      device_id: afacd8d0620a152fe420f4799e8ecafa
+  mode: single
+tesmart_hdmi_switch_m:
+  alias: TESmart HDMI Switch - M
+  sequence:
+  - service: remote.send_command
+    data:
+      device: TESmart HDMI Switch
+      command: M
+    target:
+      device_id: afacd8d0620a152fe420f4799e8ecafa
+  mode: single
+tesmart_hdmi_switch_p:
+  alias: TESmart HDMI Switch - P
+  sequence:
+  - service: remote.send_command
+    data:
+      device: TESmart HDMI Switch
+      command: P
+    target:
+      device_id: afacd8d0620a152fe420f4799e8ecafa
+  mode: single
+tesmart_hdmi_switch_ok:
+  alias: TESmart HDMI Switch - Ok
+  sequence:
+  - service: remote.send_command
+    data:
+      device: TESmart HDMI Switch
+      command: Ok
+    target:
+      device_id: afacd8d0620a152fe420f4799e8ecafa
+  mode: single
+tesmart_hdmi_switch_menu:
+  alias: TESmart HDMI Switch - Menu
+  sequence:
+  - service: remote.send_command
+    data:
+      device: TESmart HDMI Switch
+      command: Menu
+    target:
+      device_id: afacd8d0620a152fe420f4799e8ecafa
+  mode: single
+tesmart_hdmi_switch_10:
+  alias: TESmart HDMI Switch - 10
+  sequence:
+  - service: remote.send_command
+    data:
+      command: 10
+      device: TESmart HDMI Switch
+    target:
+      device_id: afacd8d0620a152fe420f4799e8ecafa
+  mode: single
+tesmart_hdmi_switch_14:
+  alias: TESmart HDMI Switch - 14
+  sequence:
+  - service: remote.send_command
+    data:
+      device: TESmart HDMI Switch
+      command: 14
+    target:
+      device_id: afacd8d0620a152fe420f4799e8ecafa
+  mode: single
