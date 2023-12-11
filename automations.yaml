@@ -1147,6 +1147,11 @@
         data: {}
         target:
           entity_id: light.main_bedroom_accent_lights
+      double_tap_off:
+      - service: light.toggle
+        data: {}
+        target:
+          entity_id: light.main_bedroom_accent_lights
 - id: '1700265766685'
   alias: Back Yard - Light Switch Scenes
   description: ''
@@ -1164,24 +1169,6 @@
         data: {}
         target:
           entity_id: light.back_yard_string_lights
-- id: '1700714009883'
-  alias: Notification - Dryer
-  description: ''
-  use_blueprint:
-    path: sbyx/notify-or-do-something-when-an-appliance-like-a-dishwasher-or-washing-machine-finishes.yaml
-    input:
-      power_sensor: sensor.dryer_usage
-      starting_threshold: 100
-      actions:
-      - service: notify.mobile_app_scotts_iphone
-        data:
-          message: The dryer has finished!
-          title: Dryer
-      pre_actions:
-      - service: notify.mobile_app_scotts_iphone
-        data:
-          message: The dryer has started!
-          title: Dryer
 - id: '1701584427519'
   alias: Living Room - Surround Sound - Enable Night Mode
   description: ''
@@ -1223,4 +1210,28 @@
     device_id: 52e32519bf2635a8e95a89fd32259f1e
     entity_id: f7a790b694c006771be554e8329bd7e4
     domain: switch
+  mode: single
+- id: '1702232865591'
+  alias: Notification - Washing Machine
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id:
+    - sensor.washing_machine_watts
+    above: '10'
+    for: 00:01:00
+  condition:
+  - condition: state
+    entity_id: input_select.washing_machine_is_running
+    state: 'Off'
+  action:
+  - service: notify.mobile_app_scotts_iphone
+    data:
+      message: The Washing Machine is finished!
+      title: Laundry
+  - service: input_select.select_option
+    target:
+      entity_id: input_select.washing_machine_is_running
+    data:
+      option: 'On'
   mode: single
