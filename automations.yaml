@@ -1166,26 +1166,49 @@
     domain: switch
   mode: single
 - id: '1702232865591'
-  alias: Notification - Washing Machine
+  alias: Notification - Washing Machine is On
   description: ''
   trigger:
   - platform: numeric_state
     entity_id:
     - sensor.washing_machine_watts
     above: '10'
-    for: 00:01:00
-  condition:
-  - condition: state
-    entity_id: input_select.washing_machine_is_running
-    state: 'Off'
+    for:
+      hours: 0
+      minutes: 1
+      seconds: 0
+  condition: []
   action:
-  - service: notify.mobile_app_scotts_iphone
-    data:
-      message: The Washing Machine is finished!
-      title: Laundry
   - service: input_select.select_option
     target:
       entity_id: input_select.washing_machine_is_running
     data:
       option: 'On'
+  mode: single
+- id: '1703179057186'
+  alias: Notification - Washing Machine is Off
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id:
+    - sensor.washing_machine_watts
+    for:
+      hours: 0
+      minutes: 1
+      seconds: 0
+    below: 10
+  condition:
+  - condition: state
+    entity_id: input_select.washing_machine_is_running
+    state: 'On'
+  action:
+  - service: input_select.select_option
+    target:
+      entity_id: input_select.washing_machine_is_running
+    data:
+      option: 'Off'
+  - service: notify.mobile_app_scotts_iphone
+    data:
+      title: Laundry
+      message: The Washing Cycle has finished!
   mode: single
