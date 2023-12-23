@@ -1211,4 +1211,8 @@
     data:
       title: Laundry
       message: The Washing Cycle has finished!
+  - service: notify.mobile_app_imanis_iphone
+    data:
+      title: Laundry
+      message: The Washing Cycle has finished!
   mode: single
