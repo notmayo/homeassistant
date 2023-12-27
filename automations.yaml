@@ -1216,3 +1216,22 @@
       title: Laundry
       message: The Washing Cycle has finished!
   mode: single
+- id: '1703628253965'
+  alias: Notification - Imani's iPad Battery
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - sensor.imani_s_ipad_battery_level
+    attribute: '10'
+  condition: []
+  action:
+  - service: notify.mobile_app_imanis_iphone
+    data:
+      title: Battery Warning
+      message: Your iPad's battery is at or below 10%!
+  - service: notify.mobile_app_scotts_iphone
+    data:
+      message: Your iPad's battery is at or below 10%!
+      title: Battery Warning
+  mode: single
