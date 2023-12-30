@@ -1,5 +1,5 @@
 - id: '1591730305657'
-  alias: House - home
+  alias: House - Home
   description: ''
   trigger:
   - entity_id: person.scott
@@ -25,7 +25,7 @@
     service: notify.mobile_app_scotts_iphone
   mode: single
 - id: '1592603774252'
-  alias: House - away
+  alias: House - Away
   description: ''
   trigger:
   - entity_id: person.scott
@@ -59,11 +59,11 @@
     service: notify.mobile_app_scotts_iphone
   mode: single
 - id: '1594063476356'
-  alias: Front yard - lights off
+  alias: Front yard - Lights Off
   description: ''
   trigger:
   - platform: time
-    at: 0:00
+    at: 00:00:00
   condition: []
   action:
   - type: turn_off
@@ -73,26 +73,29 @@
   mode: parallel
   max: 10
 - id: '1602805431523'
-  alias: Living room - lights on
+  alias: Living Room - Lights On
   description: ''
   trigger:
-  - platform: sun
-    event: sunset
-    offset: -00:60:00
+  - platform: numeric_state
+    entity_id:
+    - sun.sun
+    attribute: elevation
+    below: -4
   condition: []
   action:
   - service: light.turn_on
     target:
       entity_id: light.living_room_accent_lights
-    data: {}
+    data:
+      brightness_pct: 100
   mode: single
   max: 10
 - id: '1602875509667'
-  alias: Living room - lights off
+  alias: Living Room - Lights Off
   description: ''
   trigger:
   - platform: time
-    at: 00:00:00
+    at: 03:00:00
   condition: []
   action:
   - service: light.turn_off
@@ -122,12 +125,14 @@
   mode: parallel
   max: 10
 - id: '1605716678701'
-  alias: Backyard - lights on
+  alias: Backyard - Lights On
   description: ''
   trigger:
-  - platform: sun
-    event: sunset
-    offset: -00:30:00
+  - platform: numeric_state
+    entity_id:
+    - sun.sun
+    attribute: elevation
+    below: -4
   condition: []
   action:
   - type: turn_on
@@ -136,7 +141,7 @@
     domain: switch
   mode: single
 - id: '1605716767914'
-  alias: Backyard - lights off
+  alias: Backyard - Lights Off
   description: ''
   trigger:
   - platform: time
@@ -153,11 +158,14 @@
     domain: switch
   mode: single
 - id: '1605808096582'
-  alias: Guest bedroom - lights on
+  alias: Guest bedroom - Lights On
   description: ''
   trigger:
-  - platform: sun
-    event: sunset
+  - platform: numeric_state
+    entity_id:
+    - sun.sun
+    attribute: elevation
+    below: -6
   condition: []
   action:
   - type: turn_on
@@ -171,7 +179,7 @@
   mode: parallel
   max: 10
 - id: '1605808152260'
-  alias: Guest bedroom - lights off
+  alias: Guest bedroom - Lights Off
   description: ''
   trigger:
   - platform: time
@@ -189,11 +197,14 @@
   mode: parallel
   max: 10
 - id: '1605808965734'
-  alias: Front yard - lights on
+  alias: Front yard - Lights On
   description: ''
   trigger:
-  - platform: sun
-    event: sunset
+  - platform: numeric_state
+    entity_id:
+    - sun.sun
+    attribute: elevation
+    below: -6
   condition: []
   action:
   - type: turn_on
@@ -202,7 +213,7 @@
     domain: light
   mode: single
 - id: '1605811873624'
-  alias: Upstairs - lights off
+  alias: Upstairs - Lights Off
   description: ''
   trigger:
   - platform: time
@@ -220,12 +231,14 @@
   mode: parallel
   max: 10
 - id: '1605811915085'
-  alias: Upstairs - lights on
+  alias: Upstairs - Lights On
   description: ''
   trigger:
-  - platform: sun
-    event: sunset
-    offset: -00:60:00
+  - platform: numeric_state
+    entity_id:
+    - sun.sun
+    attribute: elevation
+    below: -4
   condition: []
   action:
   - type: turn_on
@@ -239,11 +252,14 @@
   mode: parallel
   max: 10
 - id: '1615072867669'
-  alias: Main Bedroom - lights on
+  alias: Main Bedroom - Lights On
   description: ''
   trigger:
-  - platform: time
-    at: '19:30:00'
+  - platform: numeric_state
+    entity_id:
+    - sun.sun
+    attribute: elevation
+    below: -6
   condition: []
   action:
   - type: turn_on
@@ -253,7 +269,7 @@
   mode: parallel
   max: 10
 - id: '1615072934322'
-  alias: Main Bedroom - lights off
+  alias: Main Bedroom - Lights Off
   description: ''
   trigger:
   - platform: time
@@ -285,7 +301,7 @@
   mode: parallel
   max: 10
 - id: '1642180060330'
-  alias: Kitchen & Living room Blinds - closed
+  alias: Kitchen & Living room Blinds - Closed
   description: ''
   trigger:
   - platform: sun
@@ -301,7 +317,7 @@
       entity_id: cover.living_room_kitchen_blinds
   mode: single
 - id: '1642180106230'
-  alias: Kitchen & Living room Blinds - opened
+  alias: Kitchen & Living room Blinds - Opened
   description: ''
   trigger:
   - platform: sun
@@ -316,7 +332,7 @@
       entity_id: cover.living_room_kitchen_blinds
   mode: single
 - id: '1642998773108'
-  alias: Main Bedroom Blinds - closed
+  alias: Main Bedroom Blinds - Closed
   description: ''
   trigger:
   - platform: sun
@@ -331,7 +347,7 @@
       entity_id: cover.main_bedroom_blinds
   mode: single
 - id: '1642998801766'
-  alias: Main Bedroom Blinds - opened
+  alias: Main Bedroom Blinds - Opened
   description: ''
   trigger:
   - platform: sun
@@ -451,7 +467,8 @@
       entity_id: fan.upstairs_air_purifier
   mode: single
 - id: UpstairsHumidityFanOn
-  alias: Upstairs - Bathroom Humidity - Fan on
+  alias: Upstairs - Bathroom Humidity - Fan On
+  description: ''
   trigger:
   - platform: numeric_state
     entity_id: sensor.upstairs_bathroom_humidity
@@ -465,7 +482,8 @@
     entity_id: switch.upstairs_bathroom_humidity_fan
   mode: single
 - id: UpstairsHumidityFanOff
-  alias: Upstairs - Bathroom Humidity - Fan off
+  alias: Upstairs - Bathroom Humidity - Fan Off
+  description: ''
   trigger:
   - platform: numeric_state
     entity_id: sensor.upstairs_bathroom_humidity
@@ -479,7 +497,7 @@
     entity_id: switch.upstairs_bathroom_humidity_fan
   mode: single
 - id: '1650744829971'
-  alias: Guest Bathroom - Bathroom Humidity - Fan off
+  alias: Guest Bathroom - Bathroom Humidity - Fan Off
   description: ''
   trigger:
   - platform: numeric_state
@@ -496,7 +514,7 @@
       entity_id: switch.guest_bathroom_humidity_fan
   mode: single
 - id: '1650744883929'
-  alias: Guest Bathroom - Bathroom Humidity - Fan on
+  alias: Guest Bathroom - Bathroom Humidity - Fan On
   description: ''
   trigger:
   - platform: numeric_state
@@ -513,7 +531,7 @@
       entity_id: switch.guest_bathroom_humidity_fan
   mode: single
 - id: '1650744949375'
-  alias: Main Bathroom - Bathroom Humidity - Fan off
+  alias: Main Bathroom - Bathroom Humidity - Fan Off
   description: ''
   trigger:
   - platform: numeric_state
@@ -530,7 +548,7 @@
       entity_id: switch.main_bathroom_humidity_fan
   mode: single
 - id: '1650744985388'
-  alias: Main Bathroom - Bathroom Humidity - Fan on
+  alias: Main Bathroom - Bathroom Humidity - Fan On
   description: ''
   trigger:
   - platform: numeric_state
@@ -900,7 +918,7 @@
       entity_id: climate.upstairs
   mode: single
 - id: '1699503326449'
-  alias: Update notifications
+  alias: Notification - Updates
   description: ''
   use_blueprint:
     path: mdegat01/update_notifications.yaml
@@ -1242,11 +1260,11 @@
   - platform: numeric_state
     entity_id:
     - sensor.dryer_usage
-    above: 100
     for:
       hours: 0
       minutes: 1
       seconds: 0
+    above: 100
   condition: []
   action:
   - service: input_select.select_option
@@ -1259,14 +1277,14 @@
   alias: Notification - Dryer is Off
   description: ''
   trigger:
-  - platform: numeric_state
+  - platform: state
     entity_id:
     - sensor.dryer_usage
+    to: '0'
     for:
       hours: 0
       minutes: 1
       seconds: 0
-    below: 100
   condition:
   - condition: state
     state: 'On'
@@ -1286,3 +1304,21 @@
       title: Laundry
       message: The Drying Cycle has finished!
   mode: single
+- id: '1703881367588'
+  alias: Living Room - Dim Lights
+  description: ''
+  trigger:
+  - platform: time
+    at: 00:00:00
+  condition:
+  - condition: state
+    entity_id: light.living_room_accent_lights
+    state: 'on'
+  action:
+  - service: light.turn_on
+    target:
+      entity_id: light.living_room_accent_lights
+    data:
+      brightness_pct: 25
+  mode: single
+  max: 10
