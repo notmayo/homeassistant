@@ -76,11 +76,10 @@
   alias: Living Room - Lights On
   description: ''
   trigger:
-  - platform: numeric_state
+  - platform: state
     entity_id:
     - sun.sun
     attribute: elevation
-    below: -4
   condition: []
   action:
   - service: light.turn_on
