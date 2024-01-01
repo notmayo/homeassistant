@@ -76,10 +76,9 @@
   alias: Living Room - Lights On
   description: ''
   trigger:
-  - platform: state
-    entity_id:
-    - sun.sun
-    attribute: elevation
+  - platform: sun
+    event: sunset
+    offset: -01:00:00
   condition: []
   action:
   - service: light.turn_on
@@ -127,11 +126,8 @@
   alias: Backyard - Lights On
   description: ''
   trigger:
-  - platform: numeric_state
-    entity_id:
-    - sun.sun
-    attribute: elevation
-    below: -4
+  - platform: sun
+    event: sunset
   condition: []
   action:
   - type: turn_on
@@ -160,11 +156,9 @@
   alias: Guest bedroom - Lights On
   description: ''
   trigger:
-  - platform: numeric_state
-    entity_id:
-    - sun.sun
-    attribute: elevation
-    below: -6
+  - platform: sun
+    event: sunset
+    offset: -00:30:00
   condition: []
   action:
   - type: turn_on
@@ -199,11 +193,9 @@
   alias: Front yard - Lights On
   description: ''
   trigger:
-  - platform: numeric_state
-    entity_id:
-    - sun.sun
-    attribute: elevation
-    below: -6
+  - platform: sun
+    event: sunset
+    offset: 0
   condition: []
   action:
   - type: turn_on
@@ -233,11 +225,9 @@
   alias: Upstairs - Lights On
   description: ''
   trigger:
-  - platform: numeric_state
-    entity_id:
-    - sun.sun
-    attribute: elevation
-    below: -4
+  - platform: sun
+    event: sunset
+    offset: -01:00:00
   condition: []
   action:
   - type: turn_on
@@ -254,11 +244,8 @@
   alias: Main Bedroom - Lights On
   description: ''
   trigger:
-  - platform: numeric_state
-    entity_id:
-    - sun.sun
-    attribute: elevation
-    below: -6
+  - platform: sun
+    event: sunset
   condition: []
   action:
   - type: turn_on
@@ -1279,7 +1266,7 @@
   - platform: state
     entity_id:
     - sensor.dryer_usage
-    to: '0'
+    to: '10'
     for:
       hours: 0
       minutes: 1
@@ -1318,6 +1305,6 @@
     target:
       entity_id: light.living_room_accent_lights
     data:
-      brightness_pct: 25
+      brightness_pct: 10
   mode: single
   max: 10
