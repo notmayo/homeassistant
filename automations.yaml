@@ -1147,6 +1147,10 @@
     device_id: 52e32519bf2635a8e95a89fd32259f1e
     entity_id: f7a790b694c006771be554e8329bd7e4
     domain: switch
+  - type: turn_on
+    device_id: 52e32519bf2635a8e95a89fd32259f1e
+    entity_id: a3c4fa2ad3fbb62a1b197780cd297305
+    domain: switch
   mode: single
 - id: '1701584497789'
   alias: Living Room - Surround Sound - Disable Night Mode
@@ -1167,6 +1171,10 @@
   - type: turn_on
     device_id: 52e32519bf2635a8e95a89fd32259f1e
     entity_id: f7a790b694c006771be554e8329bd7e4
+    domain: switch
+  - type: turn_off
+    device_id: 52e32519bf2635a8e95a89fd32259f1e
+    entity_id: a3c4fa2ad3fbb62a1b197780cd297305
     domain: switch
   mode: single
 - id: '1702232865591'
