@@ -357,6 +357,11 @@ panasonic_triple_play_crt_input:
 tesmart_hdmi_switch_0:
   alias: TESmart HDMI Switch - 0
   sequence:
+  - service: media_player.select_source
+    data:
+      source: NVIDIA
+    target:
+      entity_id: media_player.lg_webos_smart_tv
   - service: remote.send_command
     data:
       device: TESmart HDMI Switch
@@ -368,6 +373,11 @@ tesmart_hdmi_switch_0:
 tesmart_hdmi_switch_1:
   alias: TESmart HDMI Switch - 1
   sequence:
+  - service: media_player.select_source
+    data:
+      source: NVIDIA
+    target:
+      entity_id: media_player.lg_webos_smart_tv
   - service: remote.send_command
     data:
       device: TESmart HDMI Switch
@@ -378,6 +388,11 @@ tesmart_hdmi_switch_1:
 tesmart_hdmi_switch_2:
   alias: TESmart HDMI Switch - 2
   sequence:
+  - service: media_player.select_source
+    data:
+      source: NVIDIA
+    target:
+      entity_id: media_player.lg_webos_smart_tv
   - service: remote.send_command
     data:
       device: TESmart HDMI Switch
@@ -388,6 +403,11 @@ tesmart_hdmi_switch_2:
 tesmart_hdmi_switch_3:
   alias: TESmart HDMI Switch - 3
   sequence:
+  - service: media_player.select_source
+    data:
+      source: NVIDIA
+    target:
+      entity_id: media_player.lg_webos_smart_tv
   - service: remote.send_command
     data:
       device: TESmart HDMI Switch
@@ -398,6 +418,11 @@ tesmart_hdmi_switch_3:
 tesmart_hdmi_switch_4:
   alias: TESmart HDMI Switch - 4
   sequence:
+  - service: media_player.select_source
+    data:
+      source: NVIDIA
+    target:
+      entity_id: media_player.lg_webos_smart_tv
   - service: remote.send_command
     data:
       device: TESmart HDMI Switch
@@ -408,6 +433,11 @@ tesmart_hdmi_switch_4:
 tesmart_hdmi_switch_5:
   alias: TESmart HDMI Switch - 5
   sequence:
+  - service: media_player.select_source
+    data:
+      source: NVIDIA
+    target:
+      entity_id: media_player.lg_webos_smart_tv
   - service: remote.send_command
     data:
       device: TESmart HDMI Switch
@@ -418,6 +448,11 @@ tesmart_hdmi_switch_5:
 tesmart_hdmi_switch_6:
   alias: TESmart HDMI Switch - 6
   sequence:
+  - service: media_player.select_source
+    data:
+      source: NVIDIA
+    target:
+      entity_id: media_player.lg_webos_smart_tv
   - service: remote.send_command
     data:
       device: TESmart HDMI Switch
@@ -428,6 +463,11 @@ tesmart_hdmi_switch_6:
 tesmart_hdmi_switch_7:
   alias: TESmart HDMI Switch - 7
   sequence:
+  - service: media_player.select_source
+    data:
+      source: NVIDIA
+    target:
+      entity_id: media_player.lg_webos_smart_tv
   - service: remote.send_command
     data:
       device: TESmart HDMI Switch
@@ -438,6 +478,11 @@ tesmart_hdmi_switch_7:
 tesmart_hdmi_switch_8:
   alias: TESmart HDMI Switch - 8
   sequence:
+  - service: media_player.select_source
+    data:
+      source: NVIDIA
+    target:
+      entity_id: media_player.lg_webos_smart_tv
   - service: remote.send_command
     data:
       device: TESmart HDMI Switch
@@ -448,6 +493,11 @@ tesmart_hdmi_switch_8:
 tesmart_hdmi_switch_9:
   alias: TESmart HDMI Switch - 9
   sequence:
+  - service: media_player.select_source
+    data:
+      source: NVIDIA
+    target:
+      entity_id: media_player.lg_webos_smart_tv
   - service: remote.send_command
     data:
       device: TESmart HDMI Switch
@@ -458,6 +508,11 @@ tesmart_hdmi_switch_9:
 tesmart_hdmi_switch_11:
   alias: TESmart HDMI Switch - 11
   sequence:
+  - service: media_player.select_source
+    data:
+      source: NVIDIA
+    target:
+      entity_id: media_player.lg_webos_smart_tv
   - service: remote.send_command
     data:
       device: TESmart HDMI Switch
@@ -468,6 +523,11 @@ tesmart_hdmi_switch_11:
 tesmart_hdmi_switch_12:
   alias: TESmart HDMI Switch - 12
   sequence:
+  - service: media_player.select_source
+    data:
+      source: NVIDIA
+    target:
+      entity_id: media_player.lg_webos_smart_tv
   - service: remote.send_command
     data:
       device: TESmart HDMI Switch
@@ -478,6 +538,11 @@ tesmart_hdmi_switch_12:
 tesmart_hdmi_switch_13:
   alias: TESmart HDMI Switch - 13
   sequence:
+  - service: media_player.select_source
+    data:
+      source: NVIDIA
+    target:
+      entity_id: media_player.lg_webos_smart_tv
   - service: remote.send_command
     data:
       device: TESmart HDMI Switch
@@ -488,6 +553,11 @@ tesmart_hdmi_switch_13:
 tesmart_hdmi_switch_15:
   alias: TESmart HDMI Switch - 15
   sequence:
+  - service: media_player.select_source
+    data:
+      source: NVIDIA
+    target:
+      entity_id: media_player.lg_webos_smart_tv
   - service: remote.send_command
     data:
       device: TESmart HDMI Switch
@@ -498,6 +568,11 @@ tesmart_hdmi_switch_15:
 tesmart_hdmi_switch_16:
   alias: TESmart HDMI Switch - 16
   sequence:
+  - service: media_player.select_source
+    data:
+      source: NVIDIA
+    target:
+      entity_id: media_player.lg_webos_smart_tv
   - service: remote.send_command
     data:
       device: TESmart HDMI Switch
@@ -548,6 +623,11 @@ tesmart_hdmi_switch_menu:
 tesmart_hdmi_switch_10:
   alias: TESmart HDMI Switch - 10
   sequence:
+  - service: media_player.select_source
+    data:
+      source: NVIDIA
+    target:
+      entity_id: media_player.lg_webos_smart_tv
   - service: remote.send_command
     data:
       command: 10
@@ -558,10 +638,67 @@ tesmart_hdmi_switch_10:
 tesmart_hdmi_switch_14:
   alias: TESmart HDMI Switch - 14
   sequence:
+  - service: media_player.select_source
+    data:
+      source: NVIDIA
+    target:
+      entity_id: media_player.lg_webos_smart_tv
   - service: remote.send_command
     data:
       device: TESmart HDMI Switch
       command: 14
     target:
       device_id: afacd8d0620a152fe420f4799e8ecafa
+  mode: single
+upstairs_tv_input_1:
+  alias: Upstairs TV Input 1
+  sequence:
+  - service: remote.send_command
+    data:
+      device: TESmart HDMI Switch
+      command: 1
+    target:
+      device_id: afacd8d0620a152fe420f4799e8ecafa
+  mode: single
+upstairs_tv_input_2:
+  alias: Upstairs TV Input 2
+  sequence:
+  - service: remote.send_command
+    data:
+      device: TESmart HDMI Switch
+      command: 1
+    target:
+      device_id: afacd8d0620a152fe420f4799e8ecafa
+  mode: single
+upstairs_tv_input_3:
+  alias: Upstairs TV Input 3
+  sequence:
+  - service: remote.send_command
+    data:
+      device: TESmart HDMI Switch
+      command: 1
+    target:
+      device_id: afacd8d0620a152fe420f4799e8ecafa
+  - service: media_player.select_source
+    metadata: {}
+    data:
+      source: XBOX
+    target:
+      entity_id: media_player.lg_webos_smart_tv
+  mode: single
+upstairs_tv_input_4:
+  alias: Upstairs TV Input 4
+  sequence:
+  - service: remote.send_command
+    data:
+      device: TESmart HDMI Switch
+      command: 1
+    target:
+      device_id: afacd8d0620a152fe420f4799e8ecafa
+  - service: media_player.select_source
+    metadata: {}
+    data:
+      source: PS5
+    target:
+      entity_id: media_player.lg_webos_smart_tv
   mode: single
