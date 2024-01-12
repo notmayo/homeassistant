@@ -1251,21 +1251,17 @@
   alias: Notification - Dryer is On
   description: ''
   trigger:
-  - platform: numeric_state
+  - platform: state
     entity_id:
-    - sensor.dryer_usage
+    - binary_sensor.dryer
+    from:
+    to: 'on'
     for:
       hours: 0
       minutes: 1
       seconds: 0
-    above: 100
   condition: []
-  action:
-  - service: input_select.select_option
-    data:
-      option: 'On'
-    target:
-      entity_id: input_select.dryer_is_running
+  action: []
   mode: single
 - id: '1703803070232'
   alias: Notification - Dryer is Off
@@ -1273,22 +1269,15 @@
   trigger:
   - platform: state
     entity_id:
-    - sensor.dryer_usage
-    to: '10'
+    - binary_sensor.dryer
+    from: 'on'
+    to: 'off'
     for:
       hours: 0
-      minutes: 1
+      minutes: 4
       seconds: 0
-  condition:
-  - condition: state
-    state: 'On'
-    entity_id: input_select.dryer_is_running
+  condition: []
   action:
-  - service: input_select.select_option
-    data:
-      option: 'Off'
-    target:
-      entity_id: input_select.dryer_is_running
   - service: notify.mobile_app_scotts_iphone
     data:
       title: Laundry
