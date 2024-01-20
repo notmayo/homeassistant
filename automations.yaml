@@ -1321,3 +1321,49 @@
       entity_id: light.kitchen_pendant_lights
     data: {}
   mode: single
+- id: '1705707692787'
+  alias: Scott - Sleep Started
+  description: ''
+  trigger:
+  - type: power
+    platform: device
+    device_id: 44d9c2231593f70caca1b72b3f5c89da
+    entity_id: 8647ed43a2bf215dd9c270ccf0b69f6a
+    domain: sensor
+    above: 20
+    for:
+      hours: 0
+      minutes: 1
+      seconds: 0
+  condition: []
+  action:
+  - service: input_select.select_option
+    target:
+      entity_id:
+      - input_select.scott_sleep
+    data:
+      option: 'on'
+  mode: single
+- id: '1705707746733'
+  alias: Scott - Sleep Ended
+  description: ''
+  trigger:
+  - type: power
+    platform: device
+    device_id: 44d9c2231593f70caca1b72b3f5c89da
+    entity_id: 8647ed43a2bf215dd9c270ccf0b69f6a
+    domain: sensor
+    below: 15
+    for:
+      hours: 0
+      minutes: 1
+      seconds: 0
+  condition: []
+  action:
+  - service: input_select.select_option
+    target:
+      entity_id:
+      - input_select.scott_sleep
+    data:
+      option: 'off'
+  mode: single
