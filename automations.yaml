@@ -269,7 +269,7 @@
   mode: parallel
   max: 10
 - id: '1639280580671'
-  alias: Security - Ensure all doors are locked
+  alias: Security - Night
   description: ''
   trigger:
   - platform: time
@@ -284,6 +284,10 @@
     data: {}
     target:
       entity_id: lock.door_locks
+  - type: turn_off
+    device_id: c8edea7effb8895473530f793dbe3c50
+    entity_id: 056a5eb65d0c8c2a59f127241779f4df
+    domain: switch
   mode: parallel
   max: 10
 - id: '1642180060330'
@@ -1366,4 +1370,17 @@
       - input_select.scott_sleep
     data:
       option: 'off'
+  mode: single
+- id: '1705730521616'
+  alias: Security - Morning
+  description: ''
+  trigger:
+  - platform: time
+    at: 06:00:00
+  condition: []
+  action:
+  - type: turn_on
+    device_id: c8edea7effb8895473530f793dbe3c50
+    entity_id: 056a5eb65d0c8c2a59f127241779f4df
+    domain: switch
   mode: single
