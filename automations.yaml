@@ -1384,3 +1384,19 @@
     entity_id: 056a5eb65d0c8c2a59f127241779f4df
     domain: switch
   mode: single
+- id: '1705937167941'
+  alias: HA - QB Integration Reload
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - sensor.qbittorrent_all_torrents
+    from:
+    to: unavailable
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
+  condition: []
+  action: []
+  mode: single
