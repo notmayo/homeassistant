@@ -340,10 +340,27 @@
   alias: Main Bedroom Blinds - Opened
   description: ''
   trigger:
-  - platform: sun
-    event: sunrise
-    offset: +01:00:00
-  condition: []
+  - platform: state
+    entity_id:
+    - input_select.scott_sleep
+    from: 'on'
+    to: 'off'
+    for:
+      hours: 0
+      minutes: 15
+      seconds: 0
+  condition:
+  - condition: time
+    weekday:
+    - sat
+    - fri
+    - thu
+    - wed
+    - tue
+    - mon
+    - sun
+    after: 07:00:00
+    before: '12:00:00'
   action:
   - service: cover.set_cover_position
     data:
@@ -1399,4 +1416,38 @@
       seconds: 0
   condition: []
   action: []
+  mode: single
+- id: '1706066432474'
+  alias: Upstairs - Lights On 2
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.upstairs_presence_sensor
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - service: light.turn_on
+    metadata: {}
+    data: {}
+    target:
+      entity_id: light.upstairs_accent_lights
+  mode: single
+- id: '1706066496431'
+  alias: Upstairs - Lights Off 2
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.upstairs_presence_sensor
+    from: 'on'
+    to: 'off'
+  condition: []
+  action:
+  - service: light.turn_off
+    target:
+      entity_id:
+      - light.upstairs_accent_lights
+    data: {}
   mode: single
