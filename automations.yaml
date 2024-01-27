@@ -276,14 +276,24 @@
     at: 00:00:00
   condition: []
   action:
-  - device_id: ffcac73fb0fb82098da3fe22e7b179c0
-    domain: lock
-    entity_id: lock.fordpass_doorlock
-    type: lock
   - service: lock.lock
     data: {}
     target:
       entity_id: lock.door_locks
+  - service: cover.close_cover
+    metadata: {}
+    data: {}
+    target:
+      entity_id: cover.garage_door
+  - device_id: ffcac73fb0fb82098da3fe22e7b179c0
+    domain: lock
+    entity_id: lock.fordpass_doorlock
+    type: lock
+  - delay:
+      hours: 0
+      minutes: 1
+      seconds: 0
+      milliseconds: 0
   - type: turn_off
     device_id: c8edea7effb8895473530f793dbe3c50
     entity_id: 056a5eb65d0c8c2a59f127241779f4df
