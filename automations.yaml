@@ -1116,7 +1116,8 @@
       device: fc8fa963b5e8fbeb99efbd87a5617107
       double_tap_on:
       - service: light.toggle
-        data: {}
+        data:
+          brightness_pct: 100
         target:
           entity_id: light.living_room_accent_lights
       double_tap_off:
